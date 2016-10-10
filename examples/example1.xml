@@ -1,27 +1,21 @@
 <recipe>
   <stages>
-    <stage>
-      <stageId>germination</stageId>
-      <metric>
-        <metricId>air-temperature</metricId>
+    <stage stageId="g">
+      <metric metricId="at">
         <minValue>20</minValue>
         <maxValue>30</maxValue>
       </metric>
-      <metric>
-        <metricId>relative-humidity</metricId>
+      <metric metricId="rh">
         <minValue>50</minValue>
         <maxValue>70</maxValue>
       </metric>
     </stage>
-    <stage>
-      <stageId>seedling</stageId>
-      <metric>
-        <metricId>air-temperature</metricId>
+    <stage stageId="se">
+      <metric metricId="at">
         <minValue>25</minValue>
         <maxValue>35</maxValue>
       </metric>
-      <metric>
-        <metricId>relative-humidity</metricId>
+      <metric metricId="rh">
         <minValue>60</minValue>
         <maxValue>70</maxValue>
       </metric>
