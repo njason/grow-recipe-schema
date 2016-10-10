@@ -1,21 +1,28 @@
 <recipe>
+  <name>Sample recipe</name>
   <stages>
-    <stage stageId="g">
-      <metric metricId="at">
+    <stage>
+      <stageType>g</stageType>
+      <metric>
+        <metricType>at</metricType>
         <minValue>20</minValue>
         <maxValue>30</maxValue>
       </metric>
-      <metric metricId="rh">
+      <metric>
+        <metricType>at</metricType>
         <minValue>50</minValue>
         <maxValue>70</maxValue>
       </metric>
     </stage>
-    <stage stageId="se">
-      <metric metricId="at">
+    <stage>
+      <stageType>se</stageType>
+      <metric>
+        <metricType>at</metricType>
         <minValue>25</minValue>
         <maxValue>35</maxValue>
       </metric>
-      <metric metricId="rh">
+      <metric>
+        <metricType>rh</metricType>
         <minValue>60</minValue>
         <maxValue>70</maxValue>
       </metric>

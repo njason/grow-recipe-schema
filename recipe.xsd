@@ -4,65 +4,36 @@
   <xs:element name="recipe">
     <xs:complexType>
       <xs:sequence>
+        <xs:element name="name" type="xs:string"></xs:element>
         <xs:element name="stages">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="stage" maxOccurs="7">
                 <xs:complexType>
-
                   <xs:sequence>
+                    <xs:element name="stageType">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:pattern value="s|g|se|j|a|f|d"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
                     <xs:element name="metric" maxOccurs="12">
                       <xs:complexType>
-
                         <xs:sequence>
-                          <xs:element name="minValue" type="xs:float"></xs:element>
-                          <xs:element name="maxValue" type="xs:float"></xs:element>
-                        </xs:sequence>
-
-                          <!--
-                            abbreviations:
-                              at: Air Temperature
-                              co2: CO2
-                              dli: Daily Light Integral
-                              p: Photoperiod
-                              ppf: Photosynthetic Photon Flux
-                              ppfd: Photosynthetic Photon Flux Density
-                              rh: Relative Humidity
-                              s: Spectrum
-                              wec: Water Electric Conductivity
-                              wdo: Water Dissolved Oxygen
-                              wph: Water pH
-                              wt: Water Temperature
-                          -->
-                          <xs:attribute name="metricId">
+                          <xs:element name="metricType">
                             <xs:simpleType>
                               <xs:restriction base="xs:string">
                                 <xs:pattern value="at|co2|dli|p|ppf|ppfd|rh|s|wec|wdo|wph|wt"/>
                               </xs:restriction>
                             </xs:simpleType>
-                          </xs:attribute>
+                          </xs:element>
+                          <xs:element name="minValue" type="xs:float"></xs:element>
+                          <xs:element name="maxValue" type="xs:float"></xs:element>
+                        </xs:sequence>
                       </xs:complexType>
                     </xs:element>
                   </xs:sequence>
-
-                  <!--
-                    abbreviations:
-                      so: Sow
-                      g: Germination
-                      se: Seedling
-                      j: Juvenile
-                      a: Adult
-                      f: Flowering
-                      d: Dormant
-                  -->
-                  <xs:attribute name="stageId">
-                    <xs:simpleType>
-                      <xs:restriction base="xs:string">
-                        <xs:pattern value="s|g|se|j|a|f|d"/>
-                      </xs:restriction>
-                    </xs:simpleType>
-                  </xs:attribute>
-
                 </xs:complexType>
               </xs:element>
             </xs:sequence>
