@@ -3,7 +3,7 @@ Draft for AVF plant recipe standard
 
 Run `$ ./validate.py <xmlfile>` on an XML file to check validation against schema
 
-Stage abbreviations:
+**Stage abbreviations:**
 - so: Sow
 - g: Germination
 - se: Seedling
@@ -12,8 +12,7 @@ Stage abbreviations:
 - f: Flowering
 - d: Dormant
 
-
-Metric abbreviations:
+**Metric abbreviations:**
 - at: Air Temperature
 - co2: CO2
 - dli: Daily Light Integral
