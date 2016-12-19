@@ -1,17 +1,20 @@
-#temp files
+# temp files
 *~
 *.swp
 *.swo
 *.stackdump
 
-#databases shouldn't be stored
+# databases shouldn't be stored
 *.db
 
-#logs
+# logs
 nohup.out
 npm-debug.log
 
-#python
+# python
 *.pyc
 /dist
 /build
+
+# app
+/*.xml
