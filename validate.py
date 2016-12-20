@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 import argparse
-
 from lxml import etree
 
 parser = argparse.ArgumentParser()
@@ -19,4 +18,4 @@ with open(params.file, 'r') as xml_file:
 parser = etree.XMLParser(schema=schema)
 etree.fromstring(xml_str, parser)
 
-print 'valid'
+print('valid')

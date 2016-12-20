@@ -3,6 +3,23 @@ Draft for AVF plant recipe standard
 
 Run `$ ./validate.py <xmlfile>` on an XML file to check validation against schema
 
+Run `$ ./redact.py <xmlfile>` to redact a recipe's sensitive data, but maintain the structure
+
+Units Key:
+~~~~~~~~~~
+c: celcius
+ppm: see [here](https://en.wikipedia.org/wiki/Parts-per_notation#SI-compliant_expressions "Wikipedia")
+mv: milli volts
+
+
+
+Metric to Unit Key:
+water-temp: c
+dissolved-oxygen: ppm
+oxidizing-reduction-potential: mv
+air-co2: ppm
+
+
 **Stage abbreviations:**
 - so: Sow
 - g: Germination
