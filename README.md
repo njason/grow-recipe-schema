@@ -5,8 +5,10 @@ Run `$ ./validate.py <xmlfile>` on an XML file to check validation against schem
 
 Run `$ ./redact.py <xmlfile>` to redact a recipe's sensitive data, but maintain the structure
 
-Units Key:
-~~~~~~~~~~
+
+
+**Units Key:**
+http://unitsofmeasure.org/ucum.html
 c: celcius
 ppm: see [here](https://en.wikipedia.org/wiki/Parts-per_notation#SI-compliant_expressions "Wikipedia")
 mv: milli volts
@@ -20,7 +22,7 @@ oxidizing-reduction-potential: mv
 air-co2: ppm
 
 
-**Stage abbreviations:**
+***Stage abbreviations:***
 - so: Sow
 - g: Germination
 - se: Seedling
