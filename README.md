@@ -9,9 +9,9 @@ Run `$ ./redact.py <xmlfile>` to redact a recipe's sensitive data, but maintain 
 
 **Units Key:**
 http://unitsofmeasure.org/ucum.html
-c: celcius
-ppm: see [here](https://en.wikipedia.org/wiki/Parts-per_notation#SI-compliant_expressions "Wikipedia")
-mv: milli volts
+- c: celcius
+- ppm: see [here](https://en.wikipedia.org/wiki/Parts-per_notation#SI-compliant_expressions "Wikipedia")
+- mv: milli volts
 
 
 
