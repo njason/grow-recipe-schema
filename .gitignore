@@ -16,5 +16,8 @@ npm-debug.log
 /dist
 /build
 
+# c
+*.out
+
 # app
 /*.xml
