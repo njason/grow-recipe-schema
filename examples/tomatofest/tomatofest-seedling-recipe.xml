@@ -8,11 +8,11 @@
   <stages>
     <stage name="seedling" min="432000" max="1036800">
       <cycle>
-        <period label="Day Time" start="0" end="32400">
+        <period label="Day Time" start="0" end="32399">
           <metric name="air-temp" min="24" max="27" />
           <metric name="ppfd" min="500" max="500" />
         </period>
-        <period label="Night Time" start="32401" end="54000">
+        <period label="Night Time" start="32400" end="86399">
           <metric name="air-temp" min="10" max="15.5" />
         </period>
       </cycle>
