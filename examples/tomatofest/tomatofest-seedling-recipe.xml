@@ -3,10 +3,8 @@
 -->
 
 <recipe>
-  <stages>
     <stage name="seedling" min="432000" max="1036800">
       <cycle>
-        <periods>
 
           <!--day time-->
           <period start="0" end="32399">
@@ -44,8 +42,6 @@
             <metric name="air-temp" min="10" max="15.5" />
           </period>
 
-        </periods>
       </cycle>
     </stage>
-  </stages>
 </recipe>
