@@ -1,20 +1,50 @@
 <!--
   TomatoFest.com Heirloom tomato recipe
-
-  Version 1 with stage cycles
 -->
 
 <recipe>
   <stages>
     <stage name="seedling" min="432000" max="1036800">
       <cycle>
-        <period label="Day Time" start="0" end="32399">
-          <metric name="air-temp" min="24" max="27" />
-          <metric name="ppfd" min="500" max="500" />
-        </period>
-        <period label="Night Time" start="32400" end="86399">
-          <metric name="air-temp" min="10" max="15.5" />
-        </period>
+        <periods>
+
+          <!--day time-->
+          <period start="0" end="32399">
+
+            <metric name="air-temp" min="24" max="27" />
+
+            <!-- full spectrum-->
+            <light>
+              <!--UV-->
+              <spectrum min="280" max="315">
+                <ppdf min="100" max="100" />
+              </spectrum>
+              <!--blue-->
+              <spectrum min="450" max="500">
+                <ppdf min="100" max="100" />
+              </spectrum>
+              <!--green-->
+              <spectrum min="500" max="570">
+                <ppdf min="100" max="100" />
+              </spectrum>
+              <!--red-->
+              <spectrum min="610" max="760">
+                <ppdf min="100" max="100" />
+              </spectrum>
+              <!--ir-->
+              <spectrum min="700" max="1000000">
+                <ppdf min="100" max="100" />
+              </spectrum>
+            </light>
+
+          </period>
+
+          <!-- night time -->
+          <period start="32400" end="86399">
+            <metric name="air-temp" min="10" max="15.5" />
+          </period>
+
+        </periods>
       </cycle>
     </stage>
   </stages>
