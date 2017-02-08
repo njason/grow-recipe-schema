@@ -15,23 +15,23 @@
             <light>
               <!--UV-->
               <spectrum min="280" max="315">
-                <ppdf min="100" max="100" />
+                <ppfd min="100" max="100" />
               </spectrum>
               <!--blue-->
               <spectrum min="450" max="500">
-                <ppdf min="100" max="100" />
+                <ppfd min="100" max="100" />
               </spectrum>
               <!--green-->
               <spectrum min="500" max="570">
-                <ppdf min="100" max="100" />
+                <ppfd min="100" max="100" />
               </spectrum>
               <!--red-->
               <spectrum min="610" max="760">
-                <ppdf min="100" max="100" />
+                <ppfd min="100" max="100" />
               </spectrum>
               <!--ir-->
               <spectrum min="700" max="1000000">
-                <ppdf min="100" max="100" />
+                <ppfd min="100" max="100" />
               </spectrum>
             </light>
 
