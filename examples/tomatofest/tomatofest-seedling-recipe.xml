@@ -9,7 +9,9 @@
           <!--day time-->
           <period start="0" end="32399">
 
-            <metric name="air-temp" min="24" max="27" />
+            <air>
+              <temperature min="24" max="27" />
+            </air>
 
             <!-- full spectrum-->
             <light>
@@ -39,7 +41,9 @@
 
           <!-- night time -->
           <period start="32400" end="86399">
-            <metric name="air-temp" min="10" max="15.5" />
+            <air>
+              <temperature min="10" max="15.5" />
+            </air>
           </period>
 
       </cycle>
