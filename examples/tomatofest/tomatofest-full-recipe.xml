@@ -4,10 +4,12 @@
 -->
 <recipe schema_ver="1.0">
   <metadata>
-    <author value="AVF Plant Recipe WG" />
-    <crop value="tomato" />
-    <comment value="From TomatoFest.com Heirloom tomato recipe" />
-    <version value="1.0" />
+    <author>AVF Plant Recipe WG"</author>
+    <version>1.0</version>
+    <crops>
+      <crop>tomato</crop>
+    </crops>
+    <comment language="eng">From TomatoFest.com Heirloom tomato recipe</comment>
   </metadata>
   <stage name="default">
     <air>

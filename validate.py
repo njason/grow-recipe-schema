@@ -13,7 +13,7 @@ with open('recipe.xsd', 'r') as schema_file:
     schema = etree.XMLSchema(schema_tree)
 
 with open(params.file, 'r') as xml_file:
-    xml_str = xml_file.read().replace('\n', '')
+    xml_str = xml_file.read().replace('\n', '').encode('utf-8')
 
 parser = etree.XMLParser(schema=schema)
 etree.fromstring(xml_str, parser)
