@@ -47,7 +47,7 @@ Name                            Unit
 
 Light
 -----
-Light metrics are separated into one or more bands. A band is defined as an upper and lower wavelength (nanometers) within the electromagnetic spectrum. A band can also be defined as a specific Color Temperature, determining the warmness or coolness of white light, using Kelvin (K) as units of measure. Within a band a light intensity is defined with the usual min and max values. Light intensity is represented in PPFD (µmol/m\ :sup:`2`\ /s)
+Light metrics are separated into one or more bands. A band is defined as an upper and lower wavelength (nanometers) within the electromagnetic spectrum. Within a band a light intensity is defined with the usual min and max values. Light intensity is represented in PPFD (µmol/m\ :sup:`2`\ /s)
 
 
 .. _converter: http://www.lenntech.com/calculators/ppm/converter-parts-per-million.htm
