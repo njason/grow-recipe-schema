@@ -20,7 +20,7 @@ The minimum required structure is the XML document declaration and the root reci
 
       <default>
         <air>
-          <temperature min=”18” max=”24” />
+          <temperature min="18" max="24" />
         </air>
       <default>
 
@@ -36,13 +36,13 @@ The `default` node is a special node under the `root` node recipe because it is 
     
       <default>
         <air>
-          <temperature min=”18” max=”24” />
+          <temperature min="18" max="24" />
         </air>
       <default>
         
       <germination>
         <air>
-          <temperature min=”26” max=”32” />
+          <temperature min="26" max="32" />
         </air>
       </germination>
 
@@ -58,19 +58,19 @@ Metrics can also be defined in periods within a cycle which can be used to repre
 
       <default>
         <!-- 24 hours -->
-        <cycle duration=”86400”>
+        <cycle duration="86400">
 
           <!-- Day Time, 18 hours -->
-          <period duration=”64800”>
+          <period duration="64800">
             <air>
-              <temperature min=”18” max=”24” />
+              <temperature min="18" max="24" />
             </air>
           </period>
 
           <!-- Night Time, 6 hours -->
-          <period duration=”21600”>
+          <period duration="21600">
             <air>
-              <temperature min=”15” max=”17” />
+              <temperature min="15" max="17" />
             </air>
           </period>
           
@@ -79,7 +79,7 @@ Metrics can also be defined in periods within a cycle which can be used to repre
       
       <germination>
         <air>
-          <temperature min=”26” max=”32” />
+          <temperature min="26" max="32" />
         </air>
       </germination>
 
