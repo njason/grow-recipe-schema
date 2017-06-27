@@ -18,11 +18,11 @@ The minimum required structure is the XML document declaration and the root reci
 
     <recipe>
 
-        <default>
-            <air>
-                <temperature min=”18” max=”24” />
-            </air>
-        <default>
+      <default>
+        <air>
+          <temperature min=”18” max=”24” />
+        </air>
+      <default>
 
     </recipe>
 
