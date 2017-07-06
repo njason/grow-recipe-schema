@@ -16,7 +16,7 @@ def get_day_range(elem: objectify.ObjectifiedElement) -> str:
                                     int(elem.get('max')) /60/60/24)
 
 
-def main() -> None:
+def main():
     """Entry point"""
     parser = argparse.ArgumentParser()
     parser.add_argument('file')
