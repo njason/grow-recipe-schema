@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>AVF Plant Recipe Standard</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h1>Plant Recipe Standard</h1>
+          <a href="https://vertical-farming.net/">
+            <img src="img/avf.png" />
+          </a>
+
+          <aside class="notes">
+            Hi everyone.<br>
+            My name is Jason Biegel, I am a software engineer, aspiring indoor farmer, and volunteer with the Assocation for Vertical Farming. I have been working with others in the indoor farming industry to design an open source plant recipe standard. What is a plant recipe you might ask?<br>
+          <aside>
+        </section>
+
+        <section>
+          <h2>Instructions on how to grow plants</h2>
+
+          <aside class="notes">
+            Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. These environmental conditions are things such as air temperature, relative humidity, lighting, and for hydroponic growing, soluble element concentration, typically measured in electro conductivity. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+          </aside>
+        </section>
+
+        <section>
+          <section>
+            <h2>What are the solutions out there now?</h2>
+          </section>
+
+          <section>
+            <h2>Free form text</h2>
+            <img src="img/text-recipe.png" />
+
+            <aside class="notes">
+              A lot of recipes are simply written word which is easier for humans to read, but difficult for a computer.<br>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Proptietary formats</h2>
+
+            <aside class="notes">
+              There are many monitor and control products on the market with propietary formats for storing grow recipes. This limits the capabilities of what can be done with a grow recipes<br>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Treat plant recipes like source code</h3>
+            <h4>Structured by standards</h4>
+            <h4>Content is propietarty</h4>
+          </section>
+
+          <section>
+            <pre>
+              <code class="xml" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                  &lt;/default&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <pre>
+              <code class="shell" data-trim>
+                $ vim recipe.xml  # increase max temperature
+
+                $ git checkout -b higher-temp-test
+
+                $ git add recipe.xml
+
+                $ git commit -m "increase max air temperature"
+
+                $ git checkout master
+
+                $ git merge higher-temp-test
+              </code>
+            </pre>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>
