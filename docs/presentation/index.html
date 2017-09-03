@@ -38,11 +38,45 @@
         </section>
 
         <section>
-          <h2>Instructions on how to grow plants</h2>
+          <section>
+            <h2>Instructions on how to grow plants</h2>
 
-          <aside class="notes">
-            Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. These environmental conditions are things such as air temperature, relative humidity, lighting, and for hydroponic growing, soluble element concentration, typically measured in electro conductivity. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
-          </aside>
+            <aside class="notes">
+              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. These environmental conditions are things such as air temperature, relative humidity, lighting, and for hydroponic growing, soluble element concentration, typically measured in electro conductivity. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+            </aside>
+          </section>
+
+          <section>
+            <h2>Air Metrics</h2>
+
+            <p class="fragment">temperature</p>
+            <p class="fragment">relative humidity</p>
+            <p class="fragment">carbon dioxide</p>
+          </section>
+
+          <section>
+            <h2>Water Metrics</h2>
+
+            <p class="fragment">temperature</p>
+            <p class="fragment">electro conductivity</p>
+            <p class="fragment">pH</p>
+          </section>
+
+          <section>
+            <h2>Light Metrics</h2>
+
+            <p class="fragment">PPFD</p>
+            <p class="fragment">light bands (wavelength)</p>
+          </section>
+
+          <section>
+            <h2>Growth Status</h2>
+
+            <p class="fragment">germination</p>
+            <p class="fragment">seedling</p>
+            <p class="fragment">vegetative</p>
+            <p class="fragment">flowering</p>
+          </section>
         </section>
 
         <section>
@@ -91,10 +125,10 @@
 
           <section>
             <pre>
-              <code class="shell" data-trim>
-                $ vim recipe.xml  # increase max temperature
-
+              <code class="bash" data-trim>
                 $ git checkout -b higher-temp-test
+
+                $ vim recipe.xml
 
                 $ git add recipe.xml
 
