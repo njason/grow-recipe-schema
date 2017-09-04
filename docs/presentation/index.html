@@ -32,17 +32,29 @@
           </a>
 
           <aside class="notes">
-            Hi everyone.<br>
             My name is Jason Biegel, I am a software engineer, aspiring indoor farmer, and volunteer with the Assocation for Vertical Farming. I have been working with others in the indoor farming industry to design an open source plant recipe standard. What is a plant recipe you might ask?<br>
           <aside>
         </section>
 
         <section>
           <section>
-            <h2>Instructions on how to grow plants</h2>
+
+            <h3>What are plant recipes?</h3>
+
+            <p class="fragment">Instructions on how to grow plants</p>
 
             <aside class="notes">
-              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. These environmental conditions are things such as air temperature, relative humidity, lighting, and for hydroponic growing, soluble element concentration, typically measured in electro conductivity. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+
+              The plant recipe group of the AVF began by figuring out what information about plant growth are important and measurable using tools available to growers.
+            </aside>
+          </section>
+
+          <section>
+            <h2>What information do recipes contain?</h2>
+
+            <aside class="notes">
+              The environmental conditions which can be measured and adjusted by growers or autmated control systems. One of the major advantages to indoor growing is the amound of control you have over the environmental conditions for you plants. We split these conditions into three categories: air, water, and light.<br>
             </aside>
           </section>
 
@@ -52,6 +64,10 @@
             <p class="fragment">temperature</p>
             <p class="fragment">relative humidity</p>
             <p class="fragment">carbon dioxide</p>
+            
+            <aside class="notes">
+              Air metrics measure conditions in the air around the plants.<br>
+            </aside>
           </section>
 
           <section>
@@ -60,24 +76,42 @@
             <p class="fragment">temperature</p>
             <p class="fragment">electro conductivity</p>
             <p class="fragment">pH</p>
+
+            <aside class="notes">
+              Water metrics play a big role hydroponic growing. Most importantly, pH and the soluble element concentration which is typically measured as electro conductivity. To be more accurate, you could also measure the mass concentration of specific elements. Nitrogen, phosphorus, and potassium being the most important elements for plant growth, but there many other to consider as well.<br>
+            </aside>
           </section>
 
           <section>
             <h2>Light Metrics</h2>
 
-            <p class="fragment">PPFD</p>
-            <p class="fragment">light bands (wavelength)</p>
+            <p class="fragment">wavelength</p>
+            <p class="fragment">intensity</p>
+
+            <img class="fragment" src="img/light-charts.png" />
+
+            <aside class="notes">
+              Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. There is also an intensity for each wavelength that can be measured.
+            </aside>
           </section>
 
           <section>
-            <h2>Growth Status</h2>
+            <h2>Growth Stages</h2>
 
             <p class="fragment">germination</p>
             <p class="fragment">seedling</p>
             <p class="fragment">vegetative</p>
             <p class="fragment">flowering</p>
+
+            <img class="fragment" style="max-width: 300px;" src="img/growth-stages.png" />
+
+            <aside class="notes">
+              Because ideal conditions can change during a plant growing process, we made the structure of the data format contain different stages so conditions can be different depending on the age of the plant. Conditions can also vary depending on the time of day, for example only providing light to plants for some parts of the day.<br>
+            </aside>
           </section>
+
         </section>
+
 
         <section>
           <section>
@@ -89,26 +123,83 @@
             <img src="img/text-recipe.png" />
 
             <aside class="notes">
-              A lot of recipes are simply written word which is easier for humans to read, but difficult for a computer.<br>
+              We also looked at what was already out there. We found a lot of recipes are simply written word which is easy for humans to read, but difficult for a computer to understand.<br>
             </aside>
           </section>
 
           <section>
-            <h2>Proptietary formats</h2>
+            <h2>Many proprietary formats</h2>
+
+            <img src="img/buzz.png" />
 
             <aside class="notes">
-              There are many monitor and control products on the market with propietary formats for storing grow recipes. This limits the capabilities of what can be done with a grow recipes<br>
+              There are many great products on the market for monitoring controling growing areas. However, each one of these products have propietary formats for storing grow recipes. Growers might also come up with their own format to store plant recipe data such as Excel. This limits the capabilities of what can be done with grow recipes.<br>
             </aside>
+          </section>
+
+          <section>
+            <h2>What else is out there?</h2>
+
+            <p>
+              <a href="https://www.media.mit.edu/groups/open-agriculture-openag/overview/">
+                MIT's Open Ag Initiative
+              </a>
+            </p>
+
+            <p>
+              <a href="http://openag.io/">
+                Open Ag Data Alliance
+              </a>
+            </p>
           </section>
         </section>
 
         <section>
           <section>
             <h3>Treat plant recipes like source code</h3>
-            <h4>Structured by standards</h4>
-            <h4>Content is propietarty</h4>
+            <p class="fragment">Content should be propietarty,<br>not the content's format.</p>
+
+            <aside class="notes">
+              If plant recipes are stored in a structured format that is friendly for software development, it becomes much more versatile.<br>
+              <i>next fragment</i><br>
+              In the software industry, the valuable information is the source code, not the programming language of the source code. Similarly, the valuable information in plant recipes is the evironmental conditions, not the format of the data.
+            </aside>
+
           </section>
 
+          <section>
+            <pre>
+              <code class="bash" data-trim>
+                $ git checkout -b higher-temp-test
+
+                $ vim recipe.xml
+
+                $ git add recipe.xml
+
+                $ git commit -m "increase air temperature"
+
+                $ git checkout master
+
+                $ git merge higher-temp-test
+              </code>
+            </pre>
+
+            <aside class="notes">
+              TODO: change example to graphical branch flow<br>
+              Experimenting with different environmental conditions is a big part of growing to find the best yield. Using a text format to store plant recipe data will let growers leverage version control to manage recipe experimentation. If you familiar with git, this could be done in the form of branches. 
+            </aside>
+          </section>
+
+          <section>
+            <h2>Standardization<br>=<br>easier to sell</h2>
+
+            <aside class="notes">
+              If there is a common standard format for plant recipes, it will become easier to share. If the recipes are easier to share, they will become easier and more desirable to sell, because buyers would be able to plug-and-play the recipes they buy.<br>
+            </aside>
+          </section>
+        </section>
+
+        <section>
           <section>
             <pre>
               <code class="xml" data-trim>
@@ -121,26 +212,26 @@
                 &lt;/recipe&gt;
               </code>
             </pre>
+
+            <aside class="notes">
+              Here is a very basic example of a recipe
+            </aside>
           </section>
 
           <section>
-            <pre>
-              <code class="bash" data-trim>
-                $ git checkout -b higher-temp-test
-
-                $ vim recipe.xml
-
-                $ git add recipe.xml
-
-                $ git commit -m "increase max air temperature"
-
-                $ git checkout master
-
-                $ git merge higher-temp-test
-              </code>
-            </pre>
+            <h2>Why XML?</h2>
+            <p class="fragment">
+              One of the most popular open standards for text data
+            </p>
+            <p class="fragment">
+              Is supported by many programming langauges
+            </p>
+            <p class="fragment">
+              Has rich schema support (XSL, RELAX NG)
+            </p>
           </section>
         </section>
+
       </div>
     </div>
 
