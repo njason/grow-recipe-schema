@@ -6,11 +6,17 @@
 
     <title>AVF Plant Recipe Standard</title>
 
+    <style>
+      .no-max-height {
+        max-height: none !important;
+      }
+    </style>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
 
     <!-- Printing and PDF exports -->
     <script>
@@ -24,9 +30,8 @@
   <body>
     <div class="reveal">
       <div class="slides">
-
         <section>
-          <h1>TEST2 Plant Recipe Standard</h1>
+          <h1>Plant Recipe Standard</h1>
           <a href="https://vertical-farming.net/">
             <img src="img/avf.png" />
           </a>
@@ -111,34 +116,20 @@
           </section>
 
         </section>
+
+
         <section>
-          <h2>The Recipe Structure</h2>
-          <p class="fragment">What is the recipe structure all about?</p>
-          <p class="fragment">Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
-          <p class="fragment">But first we need a baseline..</p>
+
           <section>
-          <h2>The Default Stage</h2>
-          
-          <p class="fragment">The recipe begins by defining the Default Stage. This will encapsulate the baseline settings for each of our nutrients and metrics. When we give a metric, we can define a tolerable range, for what's acceptable for one of our nutrients, or we can specify a precise value.</p>
-          <pre>
-              <code class="xml" data-trim>
-                &lt;recipe&gt;
-                  &lt;default&gt;
-                    &lt;air&gt;
-                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
-                    &lt;/air&gt;
-                    &lt;water&gt;
-                      &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
-                    &lt;/water&gt;
-                  &lt;/default&gt;
-                &lt;/recipe&gt;
-              </code>
-            </pre>
-          
+            <h2>The Recipe Structure</h2>
+            <p class="fragment">What is the recipe structure all about?</p>
+            <p class="fragment">Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
+            <p class="fragment">But first we need a baseline..</p>
           </section>
+
           <section>
-            <h2>Adding Additional Stages</h2>
-            <p class="fragment">Each additional stage we add builds upon the default stage. We only include the changes we want for the new stage. </p>
+            <h2>The Default Stage</h2>
+          
             <pre>
               <code class="xml" data-trim>
                 &lt;recipe&gt;
@@ -150,22 +141,18 @@
                       &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
                     &lt;/water&gt;
                   &lt;/default&gt;
-                  &lt;vegetative&gt;
-                    &lt;air&gt;
-                      &lt;temperature min=&quot;12&quot; max=&quot;15&quot; /&gt;
-                    &lt;/air&gt;
-                  &lt;/vegetative&gt;
                 &lt;/recipe&gt;
               </code>
             </pre>
+
+            <aside class="notes">The recipe begins by defining the Default Stage. This will encapsulate the baseline settings for each of our nutrients and metrics. When we give a metric, we can define a tolerable range, for what's acceptable for one of our nutrients, or we can specify a precise value.</aside>
+          
           </section>
+
           <section>
-            <h2>Timing and Duration</h2>
-            <p class="fragment">For each of the non-default stages we can include Start and End times, based on a 24 hour cycle.</p>
-            <p class="fragment">Or.. even add day duration for how long the stage should be defined.</p>
-            <p class="fragment"> This needs to be discussed during the call on wednesday, or earlier.</p>
-                        <pre>
-              <code class="xml" data-trim>
+            <h2>Adding Additional Stages</h2>
+            <pre>
+              <code class="xml no-max-height" data-trim>
                 &lt;recipe&gt;
                   &lt;default&gt;
                     &lt;air&gt;
@@ -184,17 +171,49 @@
               </code>
             </pre>
 
+            <aside class="notes">Each additional stage we add builds upon the default stage. We only include the changes we want for the new stage.</aside>
           </section>
 
           <section>
-          <h2>Recipe Conversions!</h2>
-          <p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
-          <p class="fragment">Include a second recipe to show how its depth and scalability</p>
+            <h2>Timing and Duration</h2>
+            <pre>
+              <code class="xml no-max-height" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                    &lt;water&gt;
+                      &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
+                    &lt;/water&gt;
+                  &lt;/default&gt;
+                  &lt;vegetative&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;12&quot; max=&quot;15&quot; /&gt;
+                    &lt;/air&gt;
+                  &lt;/vegetative&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
 
-
+            <aside class="notes">
+              For each of the non-default stages we can include Start and End times, based on a 24 hour cycle.<br>
+              Or.. even add day duration for how long the stage should be defined.<br>
+              This needs to be discussed during the call on wednesday, or earlier.
+            </aside>
           </section>
+
+          <section>
+            <h2>Recipe Conversions!</h2>
+            <p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
+            <p class="fragment">Include a second recipe to show how its depth and scalability</p>
+          </section>
+
         </section>
+
+
         <section>
+
           <section>
             <h2>What are the solutions out there now?</h2>
           </section>
