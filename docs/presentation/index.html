@@ -6,11 +6,17 @@
 
     <title>AVF Plant Recipe Standard</title>
 
+    <style>
+      .no-max-height {
+        max-height: none !important;
+      }
+    </style>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
 
     <!-- Printing and PDF exports -->
     <script>
@@ -24,9 +30,8 @@
   <body>
     <div class="reveal">
       <div class="slides">
-
         <section>
-          <h1>TEST2 Plant Recipe Standard</h1>
+          <h1>Plant Recipe Standard</h1>
           <a href="https://vertical-farming.net/">
             <img src="img/avf.png" />
           </a>
@@ -61,9 +66,9 @@
           <section>
             <h2>Air Metrics</h2>
 
-            <p class="fragment">temperature</p>
-            <p class="fragment">relative humidity</p>
-            <p class="fragment">carbon dioxide</p>
+            <p class="fragment">Temperature</p>
+            <p class="fragment">Relative Humidity</p>
+            <p class="fragment">Carbon Dioxide</p>
             
             <aside class="notes">
               Air metrics measure conditions in the air around the plants.<br>
@@ -73,8 +78,9 @@
           <section>
             <h2>Water Metrics</h2>
 
-            <p class="fragment">temperature</p>
-            <p class="fragment">electro conductivity</p>
+            <p class="fragment">Temperature</p>
+            <p class="fragment">Electro Conductivity</p>
+            <p class="fragment">Minerals and Soluble Nutrients</p>
             <p class="fragment">pH</p>
 
             <aside class="notes">
@@ -84,24 +90,24 @@
 
           <section>
             <h2>Light Metrics</h2>
-            <p class="fragment">intensity</p>
-            <p class="fragment">wavelength</p>
-            <p class="fragment">correlated color temperature</p>
+            <p class="fragment">Intensity</p>
+            <p class="fragment">Wavelength</p>
+            <p class="fragment">Correlated Color Temperature</p>
+            
             <img class="fragment" src="img/light-charts.png" />
 
             <aside class="notes">
-              Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. There is also an intensity for each wavelength that can be measured.
+              Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. There is also an intensity for each wavelength that can be measured. Additionally, white light can vary in how warm or cool the light appears. The color temperature of the white light can also dramatically affect plant growth.
             </aside>
           </section>
 
           <section>
             <h2>Growth Stages</h2>
-
-            <p class="fragment">germination</p>
-            <p class="fragment">seedling</p>
-            <p class="fragment">vegetative</p>
-            <p class="fragment">flowering</p>
-
+            <p class="fragment">Germination</p>
+            <p class="fragment">Seedling</p>
+            <p class="fragment">Vegetative</p>
+            <p class="fragment">Flowering</p>
+            <p class="fragment">Anything that is important to characterize</p>
             <img class="fragment" style="max-width: 300px;" src="img/growth-stages.png" />
 
             <aside class="notes">
@@ -113,6 +119,101 @@
 
 
         <section>
+
+          <section>
+            <h2>The Recipe Structure</h2>
+            <p class="fragment">What is the recipe structure all about?</p>
+            <p class="fragment">Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
+            <p class="fragment">But first we need a baseline..</p>
+          </section>
+
+          <section>
+            <h2>The Default Stage</h2>
+          
+            <pre>
+              <code class="xml" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                    &lt;water&gt;
+                      &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
+                    &lt;/water&gt;
+                  &lt;/default&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
+
+            <aside class="notes">The recipe begins by defining the Default Stage. This will encapsulate the baseline settings for each of our nutrients and metrics. When we give a metric, we can define a tolerable range, for what's acceptable for one of our nutrients, or we can specify a precise value.</aside>
+          
+          </section>
+
+          <section>
+            <h2>Adding Additional Stages</h2>
+            <pre>
+              <code class="xml no-max-height" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                    &lt;water&gt;
+                      &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
+                    &lt;/water&gt;
+                  &lt;/default&gt;
+                  &lt;vegetative&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;12&quot; max=&quot;15&quot; /&gt;
+                    &lt;/air&gt;
+                  &lt;/vegetative&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
+
+            <aside class="notes">Each additional stage we add builds upon the default stage. We only include the changes we want for the new stage.</aside>
+          </section>
+
+          <section>
+            <h2>Timing and Duration</h2>
+            <pre>
+              <code class="xml no-max-height" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                    &lt;water&gt;
+                      &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
+                    &lt;/water&gt;
+                  &lt;/default&gt;
+                  &lt;vegetative&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;12&quot; max=&quot;15&quot; /&gt;
+                    &lt;/air&gt;
+                  &lt;/vegetative&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
+
+            <aside class="notes">
+              For each of the non-default stages we can include Start and End times, based on a 24 hour cycle.<br>
+              Or.. even add day duration for how long the stage should be defined.<br>
+              This needs to be discussed during the call on wednesday, or earlier.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Recipe Conversions!</h2>
+            <p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
+            <p class="fragment">Include a second recipe to show how its depth and scalability</p>
+          </section>
+
+        </section>
+
+
+        <section>
+
           <section>
             <h2>What are the solutions out there now?</h2>
           </section>
