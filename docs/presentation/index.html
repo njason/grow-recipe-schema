@@ -6,16 +6,30 @@
 
     <title>AVF Plant Recipe Standard</title>
 
-    <style>
-      .no-max-height {
-        max-height: none !important;
-      }
-    </style>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+      .no-max-height {
+        max-height: none !important;
+      }
+
+      .cited-link {
+        font-size: 16px !important;
+        float: right;
+      }
+
+      .text-samples {
+        white-space: pre-wrap;       /* Since CSS 2.1 */
+        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+        white-space: -pre-wrap;      /* Opera 4-6 */
+        white-space: -o-pre-wrap;    /* Opera 7 */
+        word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      }
+    </style>
 
 
     <!-- Printing and PDF exports -->
@@ -107,7 +121,6 @@
             <p class="fragment">Seedling</p>
             <p class="fragment">Vegetative</p>
             <p class="fragment">Flowering</p>
-            <p class="fragment">Anything that is important to characterize</p>
             <img class="fragment" style="max-width: 300px;" src="img/growth-stages.png" />
 
             <aside class="notes">
@@ -204,9 +217,34 @@
           </section>
 
           <section>
-            <h2>Recipe Conversions!</h2>
-            <p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
-            <p class="fragment">Include a second recipe to show how its depth and scalability</p>
+            <h2>How to write a recipe</h2>
+            <pre class="fragment text-samples" data-trim>Temperatures should be in the range of 65 F. (18 C.) or more indoors</pre>
+            <pre class="fragment text-samples">Flowering will be promoted by warmer temperatures and best growth is from 75 to 85 F. (24-29 C.)</pre>
+            <pre>
+              <code class="xml" contenteditable data-trim>
+                &lt;recipe&gt;
+
+                &lt;/recipe&gt; 
+              </code>
+            </pre>
+            <p class="cited-link">
+              <i>Text cited from <a href="https://bonnieplants.com/growing/growing-tomatoes/">bonnieplants.com</a></i>
+            </p>
+
+            <aside class="notes">
+              Now we're going to go through an exercise of writing a recipe in XML.<br>
+              Ideally, recipes would be created and maintained through a UI.<br>
+              However, writing recipes manually in XML is not too painful.<br>
+              I found some instructions on growing tomatoes online.<br>
+              The link to the webpage I got the instructions from is at the bottom of this slide
+              incase anyone is interested in growing tomatoes themselves<br>
+              **go through text**<br>
+              Now lets add some more metrics about water that will be absorbed by the tomato roots<br>
+              We can specify the pH range that we want the water to be (5.8 to 6.3)<br>
+              We can also specify the electro-conductivity range (2 to 3.5)<br>
+            </aside>
+            <!--p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
+            <p class="fragment">Include a second recipe to show how its depth and scalability</p-->
           </section>
 
         </section>
