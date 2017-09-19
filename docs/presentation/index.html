@@ -141,8 +141,9 @@
           </section>
 
           <section>
-            <h2>Setting Defaults</h2>
-          
+            <h2>Creating the Default Stage</h2>
+            <p class="fragment">Each recipe includes a default stage for defining default metrics.</p>
+            <p class="fragment">Metrics can be defined by a tolerable range or precise value.</p>
             <pre>
               <code class="xml" data-trim>
                 &lt;recipe&gt;
@@ -164,6 +165,7 @@
 
           <section>
             <h2>Adding Additional Stages</h2>
+            <p class="fragment">Each additional stage builds upon the Default stage. We only include the metrics that are different.</p>
             <pre>
               <code class="xml no-max-height" data-trim>
                 &lt;recipe&gt;
@@ -189,6 +191,8 @@
 
           <section>
             <h2>Timing and Duration</h2>
+            <p class="fragment">We can also specify time intervals for how long a Stage should last.</p>
+            <p class="fragment">Or a stage can be defined further into day or night phases, for example.</p>
             <pre>
               <code class="xml no-max-height" data-trim>
                 &lt;recipe&gt;
@@ -200,7 +204,8 @@
                       &lt;ph min=&quot;6.8&quot; max=&quot;6.8&quot; /&gt;
                     &lt;/water&gt;
                   &lt;/default&gt;
-                  &lt;vegetative&gt;
+                  &lt;!-- 7 days --&gt;
+                  &lt;vegetative duration="604800"&gt;
                     &lt;air&gt;
                       &lt;temperature min=&quot;12&quot; max=&quot;15&quot; /&gt;
                     &lt;/air&gt;
