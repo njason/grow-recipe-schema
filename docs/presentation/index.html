@@ -29,6 +29,12 @@
         white-space: -o-pre-wrap;    /* Opera 7 */
         word-wrap: break-word;       /* Internet Explorer 5.5+ */
       }
+
+      .reveal section img {
+        background: none;
+        border-style: none;
+        box-shadow: none;
+      }
     </style>
 
 
@@ -45,14 +51,40 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Plant Recipe Standard</h1>
-          <a href="https://vertical-farming.net/">
-            <img src="img/avf.png" />
-          </a>
+          <section>
+            <h1>Plant Recipe Standard</h1>
+            <a href="https://vertical-farming.net/">
+              <img src="img/avf.png" />
+            </a>
 
-          <aside class="notes">
-            My name is Jason Biegel, I am a software engineer, aspiring indoor farmer, and volunteer with the Assocation for Vertical Farming. I have been working with others in the indoor farming industry to design an open source plant recipe standard. What is a plant recipe you might ask?<br>
-          <aside>
+            <aside class="notes">
+              My name is Jason Biegel, I am a software engineer, aspiring indoor farmer, and volunteer with the Assocation for Vertical Farming. I have been working with others in the indoor farming industry to design an open source plant recipe standard. What is a plant recipe you might ask?<br>
+            <aside>
+          </section>
+
+          <section>
+            <p>
+              <a href="https://cool-farm.com/">
+                <img src="img/coolfarm.png" />
+              </a>
+            </p>
+            <p>
+              <a href="https://www.hortilux.com/">
+                <img src="img/hortilux.png" />
+              </a>
+            </p>
+            <p>
+              <a href="https://www.osram.us/cb/home/index.jsp">
+                <img src="img/osram.png" />
+              </a>
+            </p>
+            <p>
+              <a href="https://swissponic.ch/">
+                <img src="img/swissponic.png" />
+              </a>
+            </p>
+
+          </section>
         </section>
 
         <section>
@@ -327,6 +359,14 @@
           </section>
 
           <section>
+            <img src="img/git.png" />
+
+            <aside class="notes">
+              Experimenting with different environmental conditions is a big part of growing to find the best yield. Using a text format to store plant recipe data will let growers leverage version control to manage recipe experimentation. If you familiar with git, this could be done in the form of branches. 
+            </aside>
+          </section>
+
+          <section>
             <pre>
               <code class="bash" data-trim>
                 $ git checkout -b higher-temp-test
@@ -343,12 +383,38 @@
               </code>
             </pre>
 
+          </section>
+
+        </section>
+
+        <section>
+          <section>
+            <h2>Whats next?</h2>
+
+            <p class="fragment">
+              Adaptation
+            </p>
+
             <aside class="notes">
-              TODO: change example to graphical branch flow<br>
-              Experimenting with different environmental conditions is a big part of growing to find the best yield. Using a text format to store plant recipe data will let growers leverage version control to manage recipe experimentation. If you familiar with git, this could be done in the form of branches. 
+              At this point we have established a solid idea of what the first version of the plant recipe standard will look like. However, we need user validation to ensure that was we propose is useful to growers. Users can be any type of grower, as long as they find use in tracking plant recipes in a structured format.<br>
+              ** hit next<br>
+              However, farmers will likely not have reason to use the recipe standard unless it can be used to monitor and control their grow environment. It is important to come to a consensus of an acceptable plant recipe standard so that software manufacturers can adapt using the plant recipe standard in their applications.
             </aside>
           </section>
 
+          <section>
+            <h2>How to get involved</h2>
+
+            <p class="fragment">Fill out a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6h1lA1nBl3xyMpp6_RMoFksJ_gKzOrvybXDyGu1hWxPirZw/viewform">survey</a></p>
+
+            <p class="fragment">Fork the <a href="https://github.com/njason/plant-recipe-schema">repository</a></p>
+
+            <p class="fragment">Try it out yourself!</p>
+
+            <aside class="notes">
+              Because this is an open source initiative, anyone who is interested can get involved in developing the plant standard. Currently, we are keeping our technical progress in a GitHub repository.
+            </aside>
+          </section>
         </section>
 
       </div>
