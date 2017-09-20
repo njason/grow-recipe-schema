@@ -285,26 +285,68 @@
           </section>
 
         </section>
-
+        
         <section>
-          <h2>Why XML?</h2>
-          <p class="fragment">
-            One of the most popular open standards for text data
-          </p>
-          <p class="fragment">
-            Supported by many programming langauges
-          </p>
-          <p class="fragment">
-            Has rich schema support (XSL, RELAX NG)
-          </p>
+          <section>
+            <h2>Formatting and Schema</h2>
+            <p class="fragment">A schema is a lexicon that's used to validate a recipe.</p>
+            <p class="fragment">It determines what is or isn't a metric, and the 'grammar' for how recipes are structured.</p>
+            <p class="fragment">It can determine an invalid recipe..</p>
 
-          <aside class="notes">
-            You may be asking yourself now, why are they writing in XML?<br>
-            **hit next twice<br>
-            It would also not be difficult to write conversion tools from other text formats such as JSON or YAML
-          <aside>
+            <pre>
+              <code class="xml" data-trim>
+                &lt;notagreatrecipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;butterflies min=&quot;more than five&quot; max=&quot;many&quot; /&gt;
+                    &lt;/lava&gt;
+                    &lt;moons&gt;
+                      &lt;bananas min=&quot;6.8&quot; max=&quot;sandwiches&quot; /&gt;
+                    &lt;/moons&gt;
+                  &lt;/def&gt;
+                &lt;/notagreatrecipe&gt;
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h2>Formatting and Schema continued</h2>
+            <p class="fragment">..from a valid one</p>
+            <pre>
+              <code class="xml" data-trim>
+                &lt;recipe&gt;
+                  &lt;default&gt;
+                    &lt;air&gt;
+                      &lt;temperature min=&quot;18&quot; max=&quot;24&quot; /&gt;
+                    &lt;/air&gt;
+                    &lt;water&gt;
+                      &lt;pH min=&quot;6.8&quot; max=&quot;7.25&quot; /&gt;
+                    &lt;/air&gt;
+                  &lt;/default&gt;
+                &lt;/recipe&gt;
+              </code>
+            </pre>
+          </section>
+
+          <section>
+            <h2>Benefits of XML</h2>
+            <p class="fragment">
+              One of the most popular open standards for text data
+            </p>
+            <p class="fragment">
+              Supported by many programming langauges
+            </p>
+            <p class="fragment">
+              Has rich schema support (XSL, RELAX NG)
+            </p>
+
+            <aside class="notes">
+              You may be asking yourself now, why are they writing in XML?<br>
+              **hit next twice<br>
+              It would also not be difficult to write conversion tools from other text formats such as JSON or YAML
+             <aside>
+          </section>
         </section>
-
         <section>
 
           <section>
