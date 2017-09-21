@@ -84,6 +84,10 @@
               </a>
             </p>
 
+            <aside class="notes">
+              *Jason
+            </aside>
+
           </section>
         </section>
 
@@ -92,9 +96,10 @@
 
             <h3>What are plant recipes?</h3>
 
-            <p class="fragment">Instructions on how to grow plants</p>
+            <p>Instructions on how to grow plants</p>
 
             <aside class="notes">
+              * Alan<br>
               Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
 
               The plant recipe group of the AVF began by figuring out what information about plant growth are important and measurable using tools available to growers.
@@ -112,9 +117,9 @@
           <section>
             <h2>Air Metrics</h2>
 
-            <p class="fragment">Temperature</p>
-            <p class="fragment">Relative Humidity</p>
-            <p class="fragment">Carbon Dioxide</p>
+            <p>Temperature</p>
+            <p>Relative Humidity</p>
+            <p>Carbon Dioxide</p>
             
             <aside class="notes">
               Air metrics measure conditions in the air around the plants.<br>
@@ -124,10 +129,10 @@
           <section>
             <h2>Water Metrics</h2>
 
-            <p class="fragment">Temperature</p>
-            <p class="fragment">Electro Conductivity</p>
-            <p class="fragment">Minerals and Soluble Nutrients</p>
-            <p class="fragment">pH</p>
+            <p>Temperature</p>
+            <p>Electro Conductivity</p>
+            <p>Minerals and Soluble Nutrients</p>
+            <p>pH</p>
 
             <aside class="notes">
               Water metrics play a big role hydroponic growing. Most importantly, pH and the soluble element concentration which is typically measured as electro conductivity. To be more accurate, you could also measure the mass concentration of specific elements. Nitrogen, phosphorus, and potassium being the most important elements for plant growth, but there many other to consider as well.<br>
@@ -136,11 +141,11 @@
 
           <section>
             <h2>Light Metrics</h2>
-            <p class="fragment">Intensity</p>
-            <p class="fragment">Wavelength</p>
-            <p class="fragment">Correlated Color Temperature</p>
+            <p>Intensity</p>
+            <p>Wavelength</p>
+            <p>Correlated Color Temperature</p>
             
-            <img class="fragment" src="img/light-charts.png" />
+            <img src="img/light-charts.png" />
 
             <aside class="notes">
               Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. There is also an intensity for each wavelength that can be measured. Additionally, white light can vary in how warm or cool the light appears. The color temperature of the white light can also dramatically affect plant growth.
@@ -149,11 +154,11 @@
 
           <section>
             <h2>Growth Stages</h2>
-            <p class="fragment">Germination</p>
-            <p class="fragment">Seedling</p>
-            <p class="fragment">Vegetative</p>
-            <p class="fragment">Flowering</p>
-            <img class="fragment" style="max-width: 300px;" src="img/growth-stages.png" />
+            <p>Germination</p>
+            <p>Seedling</p>
+            <p>Vegetative</p>
+            <p>Flowering</p>
+            <img style="max-width: 300px;" src="img/growth-stages.png" />
 
             <aside class="notes">
               Because ideal conditions can change during a plant growing process, we made the structure of the data format contain different stages so conditions can be different depending on the age of the plant. Conditions can also vary depending on the time of day, for example only providing light to plants for some parts of the day.<br>
@@ -167,15 +172,18 @@
 
           <section>
             <h2>The Recipe Structure</h2>
-            <p class="fragment">What is the recipe structure all about?</p>
-            <p class="fragment">Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
-            <p class="fragment">But first we need a baseline..</p>
+            <p>What is the recipe structure all about?</p>
+            <p>Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
+            <p>But first we need a baseline..</p>
+            <aside class="notes">
+              *Alan
+            </aside>
           </section>
 
           <section>
             <h2>Creating the Default Stage</h2>
-            <p class="fragment">Each recipe includes a default stage for defining default metrics.</p>
-            <p class="fragment">Metrics can be defined by a tolerable range or precise value.</p>
+            <p>Each recipe includes a default stage for defining default metrics.</p>
+            <p>Metrics can be defined by a tolerable range or precise value.</p>
             <pre>
               <code class="xml" data-trim>
                 &lt;recipe&gt;
@@ -197,7 +205,7 @@
 
           <section>
             <h2>Adding Additional Stages</h2>
-            <p class="fragment">Each additional stage builds upon the Default stage. We only include the metrics that are different.</p>
+            <p>Each additional stage builds upon the Default stage. We only include the metrics that are different.</p>
             <pre>
               <code class="xml no-max-height" data-trim>
                 &lt;recipe&gt;
@@ -223,8 +231,8 @@
 
           <section>
             <h2>Timing and Duration</h2>
-            <p class="fragment">We can also specify time intervals for how long a Stage should last.</p>
-            <p class="fragment">Or a stage can be defined further into day or night phases, for example.</p>
+            <p>We can also specify time intervals for how long a Stage should last.</p>
+            <p>Or a stage can be defined further into day or night phases, for example.</p>
             <pre>
               <code class="xml no-max-height" data-trim>
                 &lt;recipe&gt;
@@ -255,8 +263,8 @@
 
           <section>
             <h2>How to write a recipe</h2>
-            <pre class="fragment text-samples" data-trim>Temperatures should be in the range of 65 F. (18 C.) or more indoors</pre>
-            <pre class="fragment text-samples">Flowering will be promoted by warmer temperatures and best growth is from 75 to 85 F. (24-29 C.)</pre>
+            <pre class="text-samples" data-trim>Temperatures should be in the range of 65 F. (18 C.) or more indoors</pre>
+            <pre class="text-samples">Flowering will be promoted by warmer temperatures and best growth is from 75 to 85 F. (24-29 C.)</pre>
             <pre>
               <code class="xml" contenteditable data-trim>
                 &lt;recipe&gt;
@@ -269,6 +277,7 @@
             </p>
 
             <aside class="notes">
+              * Jason <br>
               Now we're going to go through an exercise of writing a recipe in XML.<br>
               Ideally, recipes would be created and maintained through a UI.<br>
               However, writing recipes manually in XML is not too painful.<br>
@@ -280,18 +289,35 @@
               We can specify the pH range that we want the water to be (5.8 to 6.3)<br>
               We can also specify the electro-conductivity range (2 to 3.5)<br>
             </aside>
-            <!--p class="fragment">Include one recipe for tomatofest, to show ease of use</p>
-            <p class="fragment">Include a second recipe to show how its depth and scalability</p-->
           </section>
 
         </section>
         
         <section>
           <section>
+            <h2>Benefits of XML</h2>
+            <p>
+              One of the most popular open standards for text data
+            </p>
+            <p>
+              Supported by many programming langauges
+            </p>
+            <p>
+              Has rich schema support (XSL, RELAX NG)
+            </p>
+
+            <aside class="notes">
+              * Jason<br>
+              You may be asking yourself now, why are they writing in XML?<br>
+              **hit next twice<br>
+              It would also not be difficult to write conversion tools from other text formats such as JSON or YAML
+             <aside>
+          </section>
+          <section>
             <h2>Formatting and Schema</h2>
-            <p class="fragment">A schema is a lexicon that's used to validate a recipe.</p>
-            <p class="fragment">It determines what is or isn't a metric, and the 'grammar' for how recipes are structured.</p>
-            <p class="fragment">It can determine an invalid recipe..</p>
+            <p>A schema is a lexicon that's used to validate a recipe.</p>
+            <p>It determines what is or isn't a metric, and the 'grammar' for how recipes are structured.</p>
+            <p>It can determine an invalid recipe..</p>
 
             <pre>
               <code class="xml" data-trim>
@@ -307,11 +333,12 @@
                 &lt;/notagreatrecipe&gt;
               </code>
             </pre>
+
           </section>
 
           <section>
             <h2>Formatting and Schema continued</h2>
-            <p class="fragment">..from a valid one</p>
+            <p>..from a valid one</p>
             <pre>
               <code class="xml" data-trim>
                 &lt;recipe&gt;
@@ -328,29 +355,15 @@
             </pre>
           </section>
 
-          <section>
-            <h2>Benefits of XML</h2>
-            <p class="fragment">
-              One of the most popular open standards for text data
-            </p>
-            <p class="fragment">
-              Supported by many programming langauges
-            </p>
-            <p class="fragment">
-              Has rich schema support (XSL, RELAX NG)
-            </p>
-
-            <aside class="notes">
-              You may be asking yourself now, why are they writing in XML?<br>
-              **hit next twice<br>
-              It would also not be difficult to write conversion tools from other text formats such as JSON or YAML
-             <aside>
-          </section>
         </section>
         <section>
 
           <section>
             <h2>What are the solutions out there now?</h2>
+
+            <aside class="notes">
+              * Jason
+            </aside>
           </section>
 
           <section>
@@ -390,7 +403,7 @@
         <section>
           <section>
             <h3>Treat plant recipes like source code</h3>
-            <p class="fragment">Content should be propietarty,<br>not the content's format.</p>
+            <p>Content should be propietarty,<br>not the content's format.</p>
 
             <aside class="notes">
               If plant recipes are stored in a structured format that is friendly for software development, it becomes much more versatile.<br>
@@ -433,25 +446,24 @@
           <section>
             <h2>Whats next?</h2>
 
-            <p class="fragment">
+            <p>
               Adaptation
             </p>
 
             <aside class="notes">
-              At this point we have established a solid idea of what the first version of the plant recipe standard will look like. However, we need user validation to ensure that was we propose is useful to growers. Users can be any type of grower, as long as they find use in tracking plant recipes in a structured format.<br>
-              ** hit next<br>
-              However, farmers will likely not have reason to use the recipe standard unless it can be used to monitor and control their grow environment. It is important to come to a consensus of an acceptable plant recipe standard so that software manufacturers can adapt using the plant recipe standard in their applications.
+              * Jason<br>
+              The challenge of this is do we start having farming use this format, or do we have software manufacturers incorporate this format.
             </aside>
           </section>
 
           <section>
             <h2>How to get involved</h2>
 
-            <p class="fragment">Fill out a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6h1lA1nBl3xyMpp6_RMoFksJ_gKzOrvybXDyGu1hWxPirZw/viewform">survey</a></p>
+            <p>Fill out a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6h1lA1nBl3xyMpp6_RMoFksJ_gKzOrvybXDyGu1hWxPirZw/viewform">survey</a></p>
 
-            <p class="fragment">Fork the <a href="https://github.com/njason/plant-recipe-schema">repository</a></p>
+            <p>Fork the <a href="https://github.com/njason/plant-recipe-schema">repository</a></p>
 
-            <p class="fragment">Try it out yourself!</p>
+            <p>Try it out yourself!</p>
 
             <aside class="notes">
               Because this is an open source initiative, anyone who is interested can get involved in developing the plant standard. Currently, we are keeping our technical progress in a GitHub repository.
