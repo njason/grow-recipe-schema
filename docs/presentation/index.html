@@ -35,6 +35,10 @@
         border-style: none;
         box-shadow: none;
       }
+
+      .block {
+        display: inline-block;
+      }
     </style>
 
 
@@ -63,26 +67,47 @@
           </section>
 
           <section>
-            <p>
-              <a href="https://cool-farm.com/">
-                <img src="img/coolfarm.png" />
+            <div>
+              <div class="block">
+                <a href="https://cool-farm.com/">
+                  <img src="img/coolfarm.png" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="https://www.hortilux.com/">
+                  <img src="img/hortilux.png" />
+                </a>
+              </div>
+            </div>
+            <div>
+              <div class="block">
+                <a href="https://www.osram.us/cb/home/index.jsp">
+                  <img src="img/osram.png" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="https://swissponic.ch/">
+                  <img src="img/swissponic.png" />
+                </a> 
+              </div>
+            </div>
+            <div>
+              <div class="block">
+                <a href="http://www.motorleaf.com/">
+                  <img src="img/motorleaf.png" />
+                </a>
+              </div>
+              <div class="block">
+                <a href="https://farm.one/">
+                  <img src="img/farmone.png" />
+                </a> 
+              </div>
+            </div>
+            <div>
+              <a href="https://www.agrowbox.org/">
+                Agrowbox
               </a>
-            </p>
-            <p>
-              <a href="https://www.hortilux.com/">
-                <img src="img/hortilux.png" />
-              </a>
-            </p>
-            <p>
-              <a href="https://www.osram.us/cb/home/index.jsp">
-                <img src="img/osram.png" />
-              </a>
-            </p>
-            <p>
-              <a href="https://swissponic.ch/">
-                <img src="img/swissponic.png" />
-              </a>
-            </p>
+            </div>
 
             <aside class="notes">
               *Jason
@@ -315,9 +340,6 @@
           </section>
           <section>
             <h2>Formatting and Schema</h2>
-            <p>A schema is a lexicon that's used to validate a recipe.</p>
-            <p>It determines what is or isn't a metric, and the 'grammar' for how recipes are structured.</p>
-            <p>It can determine an invalid recipe..</p>
 
             <pre>
               <code class="xml" data-trim>
@@ -333,6 +355,10 @@
                 &lt;/notagreatrecipe&gt;
               </code>
             </pre>
+
+            <aside class="notes">
+              A schema is a lexicon that's used to validate a recipe. It determines what is or isn't a metric, and the 'grammar' for how recipes are structured. It can determine an invalid recipe..
+            </aside>
 
           </section>
 
@@ -397,6 +423,10 @@
                 Open Ag Data Alliance
               </a>
             </p>
+
+            <aside class="notes">
+              There are several other open source ag initiatives out there that we hope to combine efforts with
+            </aside>
           </section>
         </section>
 
@@ -407,7 +437,6 @@
 
             <aside class="notes">
               If plant recipes are stored in a structured format that is friendly for software development, it becomes much more versatile.<br>
-              <i>**hit next</i><br>
               In the software industry, the valuable information is the source code, not the programming language of the source code. Similarly, the valuable information in plant recipes is the evironmental conditions, not the format of the data.
             </aside>
 
@@ -443,34 +472,37 @@
         </section>
 
         <section>
-          <section>
-            <h2>Whats next?</h2>
+          <h2>Whats next?</h2>
 
-            <p>
-              Adaptation
-            </p>
+          <p>
+            Adaptation
+          </p>
 
-            <aside class="notes">
-              * Jason<br>
-              The challenge of this is do we start having farming use this format, or do we have software manufacturers incorporate this format.
-            </aside>
-          </section>
-
-          <section>
-            <h2>How to get involved</h2>
-
-            <p>Fill out a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6h1lA1nBl3xyMpp6_RMoFksJ_gKzOrvybXDyGu1hWxPirZw/viewform">survey</a></p>
-
-            <p>Fork the <a href="https://github.com/njason/plant-recipe-schema">repository</a></p>
-
-            <p>Try it out yourself!</p>
-
-            <aside class="notes">
-              Because this is an open source initiative, anyone who is interested can get involved in developing the plant standard. Currently, we are keeping our technical progress in a GitHub repository.
-            </aside>
-          </section>
+          <aside class="notes">
+            * Jason<br>
+            The challenge of this is do we start having farming use this format, or do we have software manufacturers incorporate this format.
+          </aside>
         </section>
 
+        <section>
+          <h2>How to get involved</h2>
+
+          <p>Fill out a <a href="https://docs.google.com/forms/d/e/1FAIpQLSe6h1lA1nBl3xyMpp6_RMoFksJ_gKzOrvybXDyGu1hWxPirZw/viewform">survey</a></p>
+
+          <p>Fork the repository</p>
+
+          <p><a href="https://github.com/njason/plant-recipe-schema">https://github.com/njason/plant-recipe-schema</a>
+
+          <p>Try it out yourself!</p>
+
+          <aside class="notes">
+            Because this is an open source initiative, anyone who is interested can get involved in developing the plant standard. Currently, we are keeping our technical progress in a GitHub repository.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Thank you!</h2>
+        </section>
       </div>
     </div>
 
