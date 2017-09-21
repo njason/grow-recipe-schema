@@ -125,9 +125,9 @@
 
             <aside class="notes">
               * Alan<br>
-              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. As more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. Howerver, as more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
 
-              The plant recipe group of the AVF began by figuring out what information about plant growth are important and measurable using tools available to growers.
+              The plant recipe group of the AVF began by figuring out what information about plant growth is important and measurable using tools available to growers.
             </aside>
           </section>
 
@@ -135,7 +135,8 @@
             <h2>What information do recipes contain?</h2>
 
             <aside class="notes">
-              The environmental conditions which can be measured and adjusted by growers or autmated control systems. One of the major advantages to indoor growing is the amound of control you have over the environmental conditions for you plants. We split these conditions into three categories: air, water, and light.<br>
+              This led us to inquire into the fundamental question of, 'What information do recipes contain'? What we found was, 
+              even more questions. 'How is the information represented', or "in what range or units are being used?". Altogether though, the underlying commonality was that these environmental conditions could be measured, controlled, or adjusted: either by growers themselves or automated control systems. We split these conditions into three categories: air, water, and light.<br>
             </aside>
           </section>
 
@@ -147,7 +148,7 @@
             <p>Carbon Dioxide</p>
             
             <aside class="notes">
-              Air metrics measure conditions in the air around the plants.<br>
+              Air metrics measure conditions in the air around the plants, whether it's for temperature, relative humidity or carbon dioxide.<br>
             </aside>
           </section>
 
@@ -160,7 +161,7 @@
             <p>pH</p>
 
             <aside class="notes">
-              Water metrics play a big role hydroponic growing. Most importantly, pH and the soluble element concentration which is typically measured as electro conductivity. To be more accurate, you could also measure the mass concentration of specific elements. Nitrogen, phosphorus, and potassium being the most important elements for plant growth, but there many other to consider as well.<br>
+              Water metrics play a big role hydroponic growing. Most importantly, pH and the soluble element concentration which is typically measured as electro conductivity. To be more accurate, you could also measure the mass concentration of specific elements. Nitrogen, phosphorus, and potassium being the most important elements for plant growth, but there many others to consider as well.<br>
             </aside>
           </section>
 
@@ -173,7 +174,7 @@
             <img src="img/light-charts.png" />
 
             <aside class="notes">
-              Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. There is also an intensity for each wavelength that can be measured. Additionally, white light can vary in how warm or cool the light appears. The color temperature of the white light can also dramatically affect plant growth.
+              Light emits photons onto plants which causes photosynthesis. Photons have wavelengths which are measured in nanometers. Some wavelengths are more desirable than other such and red and blue. Additionally, white light can vary in how warm or cool the light appears. The color temperature of the white light can also dramatically affect plant growth. There is also an intensity for each wavelength that can be measured, in terms of the lumens produced or irradiance received. 
             </aside>
           </section>
 
@@ -186,7 +187,7 @@
             <img style="max-width: 300px;" src="img/growth-stages.png" />
 
             <aside class="notes">
-              Because ideal conditions can change during a plant growing process, we made the structure of the data format contain different stages so conditions can be different depending on the age of the plant. Conditions can also vary depending on the time of day, for example only providing light to plants for some parts of the day.<br>
+              Because ideal conditions can change during a plant growing process, we made the structure of the data format contain different stages so conditions can adapt depending on the age of the plant. Conditions can also vary depending on the time of day, for example only providing light to plants for some parts of the day.<br>
             </aside>
           </section>
 
@@ -201,7 +202,8 @@
             <p>Now that we've discussed the different metric types, and potential growth stages, we can organize this into recipe.</p>
             <p>But first we need a baseline..</p>
             <aside class="notes">
-              *Alan
+              *Alan Putting this all together, we can now start to formulate the actual structure of the recipe, and the kind of information that it contains.
+
             </aside>
           </section>
 
@@ -224,7 +226,7 @@
               </code>
             </pre>
 
-            <aside class="notes">The recipe begins by defining defaults metrics. This will encapsulate the baseline settings for each of our nutrients and metrics. When we give a metric, we can define a tolerable range, for what's acceptable for one of our nutrients, or we can specify a precise value.</aside>
+            <aside class="notes">The recipe begins by defining defaults metrics, grouped together as the 'Default Stage'. This will encapsulate the baseline settings for each of our nutrients and metrics. When we give a metric, we can define a tolerable range, for what's acceptable for one of our nutrients, or we can specify a precise value.</aside>
           
           </section>
 
@@ -251,7 +253,7 @@
               </code>
             </pre>
 
-            <aside class="notes">Each additional stage we add builds upon the default stage. We only include the changes we want for the new stage.</aside>
+            <aside class="notes">If we want to build upon the default stage, we can start including additional ones, like a 'vegetative stage' that you see here. Each additional stage we add builds upon the default stage. And by this, We only include the changes we want for the new stage.</aside>
           </section>
 
           <section>
@@ -280,9 +282,8 @@
             </pre>
 
             <aside class="notes">
-              For each of the non-default stages we can include Start and End times, based on a 24 hour cycle.<br>
-              Or.. even add day duration for how long the stage should be defined.<br>
-              This needs to be discussed during the call on wednesday, or earlier.
+              Additionlly, we can set durations and active-times for our non-default stages. For each of the non-default stages we can include Start and End times, based on a 24 hour cycle.<br>
+              Or.. even add day duration for how long the stage should be defined.
             </aside>
           </section>
 
