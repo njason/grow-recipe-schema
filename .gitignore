@@ -15,6 +15,7 @@ npm-debug.log
 *.pyc
 /dist
 /build
+.cache
 
 #sphinx
 _build
