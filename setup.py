@@ -8,7 +8,7 @@ setup(
     author='Jason Biegel, Alan Sarkisian',
     license='LICENSE',
     description='Store plant grow recipes in a structured XML format',
-    packages=find_packages(exclude=['tests', 'samples']),
+    packages=find_packages(exclude=['docs', 'samples', 'tests']),
     install_requires=[
         'lxml==4.1.1',
     ]
