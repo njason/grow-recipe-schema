@@ -1,6 +1,10 @@
-# plant-recipe-schema
+# Plant Recipe Schema
 
-Draft for AVF plant recipe standard
+XML data format for storing structured plant recipe information.
+
+## High-level overview
+    [presentation](https://www.youtube.com/watch?v=Zhoeu7jPA-w)
+    [slide](https://njason.github.io/plant-recipe-schema/presentation)
 
 Run `$ ./validate.py <xmlfile>` on an XML file to check validation against schema
 

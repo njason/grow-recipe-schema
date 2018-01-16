@@ -1,12 +1,15 @@
 #!/usr/bin/env python
+import os
 
 import argparse
 from lxml import etree
 
+DEFAULT_SCHEMA = os.path.join(os.path.dirname(__file__), 'recipe.xsd')
+
 def valid(xml_file, schema=None):
 
     if not schema:
-        with open('../recipe.xsd', 'r') as schema_file:
+        with open(DEFAULT_SCHEMA, 'r') as schema_file:
             schema_tree = etree.parse(schema_file)
             schema = etree.XMLSchema(schema_tree)
 

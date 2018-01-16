@@ -6,7 +6,7 @@ setup(
     name='plant-recipe-schema',
     version='0.2.0',
     author='Jason Biegel, Alan Sarkisian',
-    license='../LICENSE',
+    license='LICENSE',
     description='Store plant grow recipes in a structured XML format',
     packages=find_packages(exclude=['tests', 'samples']),
     install_requires=[
