@@ -4,7 +4,7 @@
   <xs:complexType name="stage">
     <xs:sequence>
 
-      <xs:attribute name="duration" type:"xs:integer"/>
+      <xs:attribute name="duration" type="xs:integer"/>
 
       <xs:element name="air" minOccurs="0">
         <xs:complexType>
