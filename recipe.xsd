@@ -2,6 +2,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
   <xs:complexType name="stage">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:byte" name="duration"/>
+      </xs:extension>
+    </xs:simpleContent>
+
     <xs:sequence>
       <xs:element name="air" minOccurs="0">
         <xs:complexType>
