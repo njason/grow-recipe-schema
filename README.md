@@ -4,7 +4,7 @@ XML data format for storing structured plant recipe information.
 
 ## High-level overview
 - [presentation](https://www.youtube.com/watch?v=Zhoeu7jPA-w)
-- [slides](https://njason.github.io/plant-recipe-schema/presentation)
+- [slides](https://njason.github.io/grow-recipe-schema/presentation)
 
 Run `$ ./validate.py <xmlfile>` on an XML file to check validation against schema
 
