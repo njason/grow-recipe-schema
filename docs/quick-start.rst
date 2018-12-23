@@ -22,7 +22,7 @@ The minimum required structure is the XML document declaration and the root reci
         <air>
           <temperature min="18" max="24" />
         </air>
-      <default>
+      </default>
 
     </recipe>
 
@@ -38,7 +38,7 @@ The `default` node is a special node under the `root` node recipe because it is 
         <air>
           <temperature min="18" max="24" />
         </air>
-      <default>
+      </default>
         
       <germination>
         <air>
