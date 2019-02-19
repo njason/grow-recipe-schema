@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>AVF Plant Recipe Standard</title>
+    <title>Grow Recipe Data Standard</title>
 
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/black.css">
@@ -56,14 +56,14 @@
       <div class="slides">
         <section>
           <section>
-            <h1>Plant Recipe Standard</h1>
-            <a href="https://vertical-farming.net/">
-              <img src="img/avf.png" />
-            </a>
+            <h1>Grow Recipe Data Standard</h1>
+
+            <p>
+              By: [Jason Biegel](http://jasonbiegel.com)
 
             <aside class="notes">
-              My name is Jason Biegel, I am a software engineer, aspiring indoor farmer, and volunteer with the Assocation for Vertical Farming. I have been working with others in the indoor farming industry to design an open source plant recipe standard. What is a plant recipe you might ask?<br>
-            <aside>
+              My name is Jason Biegel, I am a software engineer and CEA enthusiast. I have been working with others in the CEA industry to design an open source grow recipe data standard. What is a grow recipe you might ask?<br>
+            </aside>
           </section>
 
           <section>
@@ -125,7 +125,7 @@
 
             <aside class="notes">
               * Alan<br>
-              Growers of any level, from hobbyists to farmers, utilize plant recipes to know what environmental conditions are needed to get the best yield possible. Howerver, as more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
+              Growers of any level, from hobbyists to farmers, utilize grow recipes to know what environmental conditions are needed to get the best yield possible. Howerver, as more technology is incorporated into the growing process to monitor and control environment conditions, there needs to be a way for a control system to know what the desired conditions are.<br>
 
               The plant recipe group of the AVF began by figuring out what information about plant growth is important and measurable using tools available to growers.
             </aside>
@@ -406,7 +406,7 @@
             <img src="img/buzz.png" />
 
             <aside class="notes">
-              There are many great products on the market for monitoring controling growing areas. However, each one of these products have propietary formats for storing grow recipes. Growers might also come up with their own format to store plant recipe data such as Excel. This limits the capabilities of what can be done with grow recipes.<br>
+              There are many great products on the market for monitoring controling growing areas. However, each one of these products have propietary formats for storing grow recipes. Growers might also come up with their own format to store grow recipe data such as Excel. This limits the capabilities of what can be done with grow recipes.<br>
             </aside>
           </section>
 
@@ -425,6 +425,12 @@
               </a>
             </p>
 
+            <p>
+              <a href="https://github.com/open-ag-tech/api-spec">
+                Open Ag Tech
+              </a>
+            </p>
+
             <aside class="notes">
               There are several other open source ag initiatives out there that we hope to combine efforts with
             </aside>
@@ -433,12 +439,12 @@
 
         <section>
           <section>
-            <h3>Treat plant recipes like source code</h3>
+            <h3>Treat grow recipes like source code</h3>
             <p>Content should be propietarty,<br>not the content's format.</p>
 
             <aside class="notes">
-              If plant recipes are stored in a structured format that is friendly for software development, it becomes much more versatile.<br>
-              In the software industry, the valuable information is the source code, not the programming language of the source code. Similarly, the valuable information in plant recipes is the evironmental conditions, not the format of the data.
+              If grow recipes are stored in a structured format that is friendly for software development, it becomes much more versatile.<br>
+              In the software industry, the valuable information is the source code, not the programming language of the source code. Similarly, the valuable information in grow recipes is the evironmental conditions, not the format of the data.
             </aside>
 
           </section>
@@ -447,7 +453,7 @@
             <img src="img/git.png" />
 
             <aside class="notes">
-              Experimenting with different environmental conditions is a big part of growing to find the best yield. Using a text format to store plant recipe data will let growers leverage version control to manage recipe experimentation. If you familiar with git, this could be done in the form of branches. 
+              Experimenting with different environmental conditions is a big part of growing to find the best yield. Using a text format to store grow recipe data will let growers leverage version control to manage recipe experimentation. If you familiar with git, this could be done in the form of branches. 
             </aside>
           </section>
 
@@ -479,9 +485,11 @@
             Adaptation
           </p>
 
+          Try [Gardnr](https://gardnr.readthedocs.io)!
+
           <aside class="notes">
             * Jason<br>
-            The challenge of this is do we start having farming use this format, or do we have software manufacturers incorporate this format.
+            The challenge of this is do we start having farming use this format, or do we have software manufacturers incorporate this format. I have written a an open source IoT monitor and control solution which incorporates the grow recipe schema.
           </aside>
         </section>
 
@@ -492,12 +500,12 @@
 
           <p>Fork the repository</p>
 
-          <p><a href="https://github.com/njason/plant-recipe-schema">https://github.com/njason/plant-recipe-schema</a>
+          <p><a href="https://github.com/njason/grow-recipe-schema">https://github.com/njason/grow-recipe-schema</a>
 
           <p>Try it out yourself!</p>
 
           <aside class="notes">
-            Because this is an open source initiative, anyone who is interested can get involved in developing the plant standard. Currently, we are keeping our technical progress in a GitHub repository.
+            Because this is an open source initiative, anyone who is interested can get involved in developing the grow recipe standard. Currently, we are keeping our technical progress in a GitHub repository.
           </aside>
         </section>
 
