@@ -1,404 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0">
 
-  <xs:complexType name="stage">
+  <xs:complexType name="metric">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:decimal" name="min"/>
+        <xs:attribute type="xs:decimal" name="max"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="air">
+    <xs:all>
+      <xs:element name="relative-humidity" type="metric" minOccurs="0" />
+      <xs:element name="temperature" type="metric" minOccurs="0" />
+      <xs:element name="co2" type="metric" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="light">
     <xs:sequence>
-      <xs:element name="air" minOccurs="0">
+      <xs:element name="band" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>UVbluegreen/yellowredir</xs:documentation>
+        </xs:annotation>
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="relative-humidity" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="temperature">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min" use="optional"/>
-                    <xs:attribute type="xs:byte" name="max" use="optional"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="co2" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:short" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
+            <xs:element name="ppfd" type="metric" minOccurs="0" />
           </xs:sequence>
+          <xs:attribute type="xs:short" name="min" use="optional"/>
+          <xs:attribute type="xs:short" name="max" use="optional"/>
         </xs:complexType>
       </xs:element>
-      <xs:element name="light" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="band" maxOccurs="unbounded" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation>UVbluegreen/yellowredir</xs:documentation>
-              </xs:annotation>
-              <xs:complexType>
-                <xs:sequence>
-                  <xs:element name="ppfd">
-                    <xs:complexType>
-                      <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                          <xs:attribute type="xs:byte" name="min" use="optional"/>
-                          <xs:attribute type="xs:byte" name="max" use="optional"/>
-                        </xs:extension>
-                      </xs:simpleContent>
-                    </xs:complexType>
-                  </xs:element>
-                </xs:sequence>
-                <xs:attribute type="xs:short" name="min" use="optional"/>
-                <xs:attribute type="xs:short" name="max" use="optional"/>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
-      <xs:element name="water" minOccurs="0">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="electro-conductivity">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:float" name="min" use="optional"/>
-                    <xs:attribute type="xs:float" name="max" use="optional"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="temperature" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="dissolved-oxygen" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="oxidizing-reduction-potential" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="hardness" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="ph" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="nitrogen" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="phosphorus" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="potassium" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="calcium" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="magnesium" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="sulfur" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="iron" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="copper" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="zinc" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="manganese" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="molybdenum" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="sodium" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="boron" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="chlorine" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="silicon" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="iron-chelates" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="VPD" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="NaC" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="bicarbonate" minOccurs="0">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute type="xs:byte" name="min"/>
-                    <xs:attribute type="xs:short" name="max"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-        </xs:complexType>
-      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="water">
+    <xs:all>
+      <xs:element name="electro-conductivity" type="metric" minOccurs="0" />
+      <xs:element name="temperature" type="metric" minOccurs="0" />
+      <xs:element name="dissolved-oxygen" type="metric" minOccurs="0" />
+      <xs:element name="oxidizing-reduction-potential" type="metric" minOccurs="0" />
+      <xs:element name="hardness" type="metric" minOccurs="0" />
+      <xs:element name="ph" type="metric" minOccurs="0" />
+      <xs:element name="nitrogen" type="metric" minOccurs="0" />
+      <xs:element name="phosphorus" type="metric" minOccurs="0" />
+      <xs:element name="potassium" type="metric" minOccurs="0" />
+      <xs:element name="calcium" type="metric" minOccurs="0" />
+      <xs:element name="magnesium" type="metric" minOccurs="0" />
+      <xs:element name="sulfur" type="metric" minOccurs="0" />
+      <xs:element name="iron" type="metric" minOccurs="0" />
+      <xs:element name="copper" type="metric" minOccurs="0" />
+      <xs:element name="zinc" type="metric" minOccurs="0" />
+      <xs:element name="manganese" type="metric" minOccurs="0" />
+      <xs:element name="molybdenum" type="metric" minOccurs="0" />
+      <xs:element name="sodium" type="metric" minOccurs="0" />
+      <xs:element name="boron" type="metric" minOccurs="0" />
+      <xs:element name="chlorine" type="metric" minOccurs="0" />
+      <xs:element name="silicon" type="metric" minOccurs="0" />
+      <xs:element name="iron-chelates" type="metric" minOccurs="0" />
+      <xs:element name="VPD" type="metric" minOccurs="0" />
+      <xs:element name="NaC" type="metric" minOccurs="0" />
+      <xs:element name="bicarbonate" type="metric" minOccurs="0" />
+    </xs:all>
+  </xs:complexType>
+
+  <xs:complexType name="stage">
+
+    <xs:all>
+
+      <xs:element name="air" type="air" minOccurs="0" />
+      <xs:element name="light" type="light" minOccurs="0" />
+      <xs:element name="water" type="water" minOccurs="0" />
+
       <xs:element name="cycle" minOccurs="0">
         <xs:complexType>
           <xs:sequence>
-            <xs:element name="period" maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="period" minOccurs="0" maxOccurs="unbounded">
               <xs:annotation>
                 <xs:documentation>day time night time day time night time day time night time</xs:documentation>
               </xs:annotation>
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="air">
-                    <xs:complexType>
-                      <xs:sequence>
-                        <xs:element name="temperature">
-                          <xs:complexType>
-                            <xs:simpleContent>
-                              <xs:extension base="xs:string">
-                                <xs:attribute type="xs:byte" name="min" use="optional"/>
-                                <xs:attribute type="xs:float" name="max" use="optional"/>
-                              </xs:extension>
-                            </xs:simpleContent>
-                          </xs:complexType>
-                        </xs:element>
-                        <xs:element name="co2" minOccurs="0">
-                          <xs:complexType>
-                            <xs:simpleContent>
-                              <xs:extension base="xs:string">
-                                <xs:attribute type="xs:short" name="min" use="optional"/>
-                                <xs:attribute type="xs:short" name="max" use="optional"/>
-                              </xs:extension>
-                            </xs:simpleContent>
-                          </xs:complexType>
-                        </xs:element>
-                      </xs:sequence>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element name="light" minOccurs="0">
-                    <xs:annotation>
-                      <xs:documentation>full band full band full band</xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                      <xs:sequence>
-                        <xs:element name="band" maxOccurs="unbounded" minOccurs="0">
-                          <xs:annotation>
-                            <xs:documentation>UVbluegreen/yellowredirUVbluegreen/yellowredirUVbluegreen/yellowredir</xs:documentation>
-                          </xs:annotation>
-                          <xs:complexType>
-                            <xs:sequence>
-                              <xs:element name="ppfd">
-                                <xs:complexType>
-                                  <xs:simpleContent>
-                                    <xs:extension base="xs:string">
-                                      <xs:attribute type="xs:short" name="min" use="optional"/>
-                                      <xs:attribute type="xs:short" name="max" use="optional"/>
-                                    </xs:extension>
-                                  </xs:simpleContent>
-                                </xs:complexType>
-                              </xs:element>
-                            </xs:sequence>
-                            <xs:attribute type="xs:short" name="min" use="optional"/>
-                            <xs:attribute type="xs:short" name="max" use="optional"/>
-                          </xs:complexType>
-                        </xs:element>
-                      </xs:sequence>
-                    </xs:complexType>
-                  </xs:element>
-                  <xs:element name="water">
-                    <xs:complexType>
-                      <xs:sequence>
-                        <xs:element name="electro-conductivity">
-                          <xs:complexType>
-                            <xs:simpleContent>
-                              <xs:extension base="xs:string">
-                                <xs:attribute type="xs:float" name="min" use="optional"/>
-                                <xs:attribute type="xs:float" name="max" use="optional"/>
-                              </xs:extension>
-                            </xs:simpleContent>
-                          </xs:complexType>
-                        </xs:element>
-                      </xs:sequence>
-                    </xs:complexType>
-                  </xs:element>
+                  <xs:element name="air" type="air" minOccurs="0" />
+                  <xs:element name="light" type="light" minOccurs="0" />
+                  <xs:element name="water" type="water" minOccurs="0" />
                 </xs:sequence>
                 <xs:attribute type="xs:short" name="start" use="optional"/>
                 <xs:attribute type="xs:int" name="end" use="optional"/>
@@ -407,8 +93,9 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-    </xs:sequence>
-    <xs:attribute type="xs:int" name="duration" use="optional"/>
+
+    </xs:all>
+    <xs:attribute type="xs:int" name="duration" use="optional" />
   </xs:complexType>
 
   <xs:element name="recipe">
@@ -416,7 +103,7 @@
       <xs:sequence>
         <xs:element name="metadata" minOccurs="0" maxOccurs="1">
           <xs:complexType>
-            <xs:sequence>
+            <xs:all>
               <xs:element name="author" type="xs:string"/>
               <xs:element name="version" type="xs:string"/>
               <xs:element name="crops">
@@ -435,7 +122,7 @@
                   </xs:simpleContent>
                 </xs:complexType>
               </xs:element>
-            </xs:sequence>
+            </xs:all>
           </xs:complexType>
         </xs:element>
 
