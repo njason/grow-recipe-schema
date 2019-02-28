@@ -17,7 +17,7 @@ see http://unitsofmeasure.org/ucum.html
 
 ## Schema validation
 
-The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be used to validate recipe XML files. There are many ways to validate an XML file against a schema. There are many free XML validator web apps that be found with a search engine. There is also a CLI tool, [xmllint](http://xmlsoft.org/xmllint.html).
+The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be used to validate recipe XML files. There are many ways to validate an XML file against a schema. There are many free XML validator web apps that can be found with a search engine. There is also a CLI tool, [xmllint](http://xmlsoft.org/xmllint.html).
 
 ### Install xmllint
 
