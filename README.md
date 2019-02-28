@@ -21,4 +21,11 @@ The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be use
 
 ### Install xmllint on Debian-based systems
 
+#### Debian
 `$ apt install libxml2-utils`
+
+#### Windows via Chocolatey
+`C:\ choco install xsltproc`
+
+#### macOS
+pre-installed
