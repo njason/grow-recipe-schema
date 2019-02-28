@@ -24,7 +24,7 @@ The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be use
 #### Debian
 `$ apt install libxml2-utils`
 
-#### Windows via Chocolatey
+#### Windows via [Chocolatey](https://chocolatey.org/)
 `C:\ choco install xsltproc`
 
 #### macOS
