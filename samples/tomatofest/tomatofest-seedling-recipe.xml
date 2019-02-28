@@ -3,52 +3,49 @@
 -->
 
 <recipe>
+    <germination duration="604800">
+      <cycle>
 
-  <stage name="germination">
-    <air>
-      <temperature min="24" max="27" />
-    </air> 
-  </stage>
+          <!--day time-->
+          <period start="0" end="32399">
 
-  <stage name="seedling" min="432000" max="1036800">
-    <cycle>
+            <air>
+              <temperature min="24" max="27" />
+            </air>
 
-        <!--day time-->
-        <period start="0" end="32399">
+            <!-- full band-->
+            <light>
+              <!--UV-->
+              <band min="280" max="315">
+                <ppfd min="100" max="100" />
+              </band>
+              <!--blue-->
+              <band min="450" max="500">
+                <ppfd min="100" max="100" />
+              </band>
+              <!--green-->
+              <band min="500" max="570">
+                <ppfd min="100" max="100" />
+              </band>
+              <!--red-->
+              <band min="610" max="760">
+                <ppfd min="100" max="100" />
+              </band>
+              <!--ir-->
+              <band min="700" max="1000000">
+                <ppfd min="100" max="100" />
+              </band>
+            </light>
 
-          <!-- full spectrum-->
-          <light>
-            <!--UV-->
-            <spectrum min="280" max="315">
-              <ppfd min="100" max="100" />
-            </spectrum>
-            <!--blue-->
-            <spectrum min="450" max="500">
-              <ppfd min="100" max="100" />
-            </spectrum>
-            <!--green-->
-            <spectrum min="500" max="570">
-              <ppfd min="100" max="100" />
-            </spectrum>
-            <!--red-->
-            <spectrum min="610" max="760">
-              <ppfd min="100" max="100" />
-            </spectrum>
-            <!--ir-->
-            <spectrum min="700" max="1000000">
-              <ppfd min="100" max="100" />
-            </spectrum>
-          </light>
+          </period>
 
-        </period>
+          <!-- night time -->
+          <period start="32400" end="86399">
+            <air>
+              <temperature min="10" max="15.5" />
+            </air>
+          </period>
 
-        <!-- night time -->
-        <period start="32400" end="86399">
-          <air>
-            <temperature min="10" max="15.5" />
-          </air>
-        </period>
-
-    </cycle>
-  </stage>
+      </cycle>
+    </germination>
 </recipe>

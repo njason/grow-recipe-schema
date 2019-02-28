@@ -28,8 +28,8 @@
           <xs:sequence>
             <xs:element name="ppfd" type="metric" minOccurs="0" />
           </xs:sequence>
-          <xs:attribute type="xs:short" name="min" use="optional"/>
-          <xs:attribute type="xs:short" name="max" use="optional"/>
+          <xs:attribute type="xs:int" name="min" use="optional"/>
+          <xs:attribute type="xs:int" name="max" use="optional"/>
         </xs:complexType>
       </xs:element>
     </xs:sequence>
@@ -59,8 +59,8 @@
       <xs:element name="chlorine" type="metric" minOccurs="0" />
       <xs:element name="silicon" type="metric" minOccurs="0" />
       <xs:element name="iron-chelates" type="metric" minOccurs="0" />
-      <xs:element name="VPD" type="metric" minOccurs="0" />
-      <xs:element name="NaC" type="metric" minOccurs="0" />
+      <xs:element name="vpd" type="metric" minOccurs="0" />
+      <xs:element name="nacl" type="metric" minOccurs="0" />
       <xs:element name="bicarbonate" type="metric" minOccurs="0" />
     </xs:all>
   </xs:complexType>
@@ -77,25 +77,26 @@
         <xs:complexType>
           <xs:sequence>
             <xs:element name="period" minOccurs="0" maxOccurs="unbounded">
-              <xs:annotation>
-                <xs:documentation>day time night time day time night time day time night time</xs:documentation>
-              </xs:annotation>
               <xs:complexType>
-                <xs:sequence>
+                <xs:all>
                   <xs:element name="air" type="air" minOccurs="0" />
                   <xs:element name="light" type="light" minOccurs="0" />
                   <xs:element name="water" type="water" minOccurs="0" />
-                </xs:sequence>
-                <xs:attribute type="xs:short" name="start" use="optional"/>
-                <xs:attribute type="xs:int" name="end" use="optional"/>
+                </xs:all>
+                <xs:attribute type="xs:int" name="start" />
+                <xs:attribute type="xs:int" name="end" />
               </xs:complexType>
             </xs:element>
           </xs:sequence>
+
+          <xs:attribute type="xs:int" name="duration" use="optional" />
         </xs:complexType>
       </xs:element>
 
     </xs:all>
+
     <xs:attribute type="xs:int" name="duration" use="optional" />
+
   </xs:complexType>
 
   <xs:element name="recipe">
@@ -104,8 +105,8 @@
         <xs:element name="metadata" minOccurs="0" maxOccurs="1">
           <xs:complexType>
             <xs:all>
-              <xs:element name="author" type="xs:string"/>
-              <xs:element name="version" type="xs:string"/>
+              <xs:element name="author" type="xs:string" minOccurs="0" />
+              <xs:element name="version" type="xs:string" minOccurs="0" />
               <xs:element name="crops">
                 <xs:complexType>
                   <xs:sequence>
@@ -113,7 +114,7 @@
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
-              <xs:element name="comment">
+              <xs:element name="comment" minOccurs="0">
                 <xs:complexType>
                   <xs:simpleContent>
                     <xs:extension base="xs:string">
@@ -134,7 +135,7 @@
         <xs:element name="fruiting" type="stage" minOccurs="0" maxOccurs="1" />
 
       </xs:sequence>
-      <xs:attribute type="xs:float" name="schema_ver"/>
+      <xs:attribute type="xs:float" name="schema_version"/>
     </xs:complexType>
   </xs:element>
 

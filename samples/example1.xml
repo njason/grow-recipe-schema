@@ -1,31 +1,222 @@
-<recipe>
-  <name>Sample recipe</name>
-  <stages>
-    <stage>
-      <stageType>g</stageType>
-      <metric>
-        <metricType>at</metricType>
-        <minValue>20</minValue>
-        <maxValue>30</maxValue>
-      </metric>
-      <metric>
-        <metricType>at</metricType>
-        <minValue>50</minValue>
-        <maxValue>70</maxValue>
-      </metric>
-    </stage>
-    <stage>
-      <stageType>se</stageType>
-      <metric>
-        <metricType>at</metricType>
-        <minValue>25</minValue>
-        <maxValue>35</maxValue>
-      </metric>
-      <metric>
-        <metricType>rh</metricType>
-        <minValue>60</minValue>
-        <maxValue>70</maxValue>
-      </metric>
-    </stage>
-  </stages>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<recipe schema_version="1.0">
+  <metadata>
+    <author>AVF Plant Recipe WG</author>
+    <version>1.0</version>
+    <crops>
+      <crop>tomato</crop>
+    </crops>
+  </metadata>
+
+  <default>
+    <air>
+      <relative-humidity min="33" max="100" />
+      <temperature min="20" max="25" />
+      <co2 min="390" max="390" />
+    </air>
+    <light>
+      <!--UV-->
+      <band min="280" max="315">
+        <ppfd min="0" max="0" />
+      </band>
+      <!--blue-->
+      <band min="450" max="500">
+        <ppfd min="0" max="0" />
+      </band>
+      <!--green/yellow-->
+      <band min="500" max="590">
+        <ppfd min="0" max="0" />
+      </band>
+      <!--red-->
+      <band min="590" max="750">
+        <ppfd min="0" max="0" />
+      </band>
+      <!--ir-->
+      <band min="750" max="1400">
+        <ppfd min="0" max="0" />
+      </band>
+    </light>
+    <water>
+      <electro-conductivity min="0.2" max="0.2" />
+      <temperature min="77" max="123" />
+      <dissolved-oxygen min="89" max="157" />
+      <oxidizing-reduction-potential min="32" max="41" />
+      <hardness min="82" max="123" />
+      <ph min="66" max="117" />
+      <nitrogen min="94" max="175" />
+      <phosphorus min="43" max="61" />
+      <potassium min="27" max="30" />
+      <calcium min="65" max="128" />
+      <magnesium min="73" max="95" />
+      <sulfur min="75" max="164" />
+      <iron min="4" max="7" />
+      <copper min="75" max="156" />
+      <zinc min="93" max="138" />
+      <manganese min="78" max="90" />
+      <molybdenum min="97" max="134" />
+      <sodium max="75" />
+      <boron min="52" max="58" />
+      <chlorine max="67" />
+      <silicon max="91" />
+      <iron-chelates min="7" max="42" />
+      <vpd min="19" max="78" />
+      <nacl max="69" />
+      <bicarbonate min="82" max="174" />
+    </water>
+  </default>
+
+  <!--duration 5 days-->
+  <germination duration="432000">
+    <air>
+      <temperature min="24" max="27" />
+    </air>
+    <water>
+      <electro-conductivity min="0.8" max="0.8" />
+    </water>
+  </germination>
+
+  <!--duration 7 days-->
+  <vegetative duration="604800">
+    <cycle>
+      <!--day time-->
+      <period start="0" end="32399">
+        <air>
+          <temperature min="24" max="27" />
+          <co2 min="1000" max="1000" />
+        </air>
+        <!-- full band-->
+        <light>
+          <!--UV-->
+          <band min="280" max="315">
+            <ppfd min="0" max="0" />
+          </band>
+          <!--blue-->
+          <band min="450" max="500">
+            <ppfd min="250" max="250" />
+          </band>
+          <!--green/yellow-->
+          <band min="500" max="590">
+            <ppfd min="100" max="100" />
+          </band>
+          <!--red-->
+          <band min="590" max="750">
+            <ppfd min="650" max="650" />
+          </band>
+          <!--ir-->
+          <band min="750" max="1400">
+            <ppfd min="0" max="0" />
+          </band>
+        </light>
+        <water>
+          <electro-conductivity min="1.2" max="1.2" />
+        </water>
+      </period>
+      <!-- night time -->
+      <period start="32400" end="86399">
+        <air>
+          <temperature min="10" max="15.5" />
+        </air>
+        <water>
+          <electro-conductivity min="1.2" max="1.2" />
+        </water>
+      </period>
+    </cycle>
+  </vegetative>
+
+  <!--duration 28 days-->
+  <flowering duration="2419200">
+    <cycle>
+      <!--day time-->
+      <period start="0" end="32399">
+        <air>
+          <temperature min="24" max="27" />
+          <co2 min="1500" max="1500" />
+        </air>
+        <!-- full band-->
+        <light>
+          <!--UV-->
+          <band min="280" max="315">
+            <ppfd min="0" max="0" />
+          </band>
+          <!--blue-->
+          <band min="450" max="500">
+            <ppfd min="250" max="250" />
+          </band>
+          <!--green/yellow-->
+          <band min="500" max="590">
+            <ppfd min="100" max="100" />
+          </band>
+          <!--red-->
+          <band min="590" max="750">
+            <ppfd min="650" max="650" />
+          </band>
+          <!--ir-->
+          <band min="750" max="1400">
+            <ppfd min="0" max="0" />
+          </band>
+        </light>
+        <water>
+          <electro-conductivity min="1.6" max="1.6" />
+        </water>
+      </period>
+      <!-- night time -->
+      <period start="32400" end="86399">
+        <air>
+          <temperature min="10" max="15.5" />
+        </air>
+        <water>
+          <electro-conductivity min="1.6" max="1.6" />
+        </water>
+      </period>
+    </cycle>
+  </flowering>
+
+  <!--duration 10 days-->
+  <fruiting duration="864000">
+    <cycle>
+      <!--day time-->
+      <period start="0" end="32399">
+        <air>
+          <temperature min="24" max="27" />
+          <co2 min="1500" max="1500" />
+        </air>
+        <!-- full band-->
+        <light>
+          <!--UV-->
+          <band min="280" max="315">
+            <ppfd min="0" max="0" />
+          </band>
+          <!--blue-->
+          <band min="450" max="500">
+            <ppfd min="150" max="250" />
+          </band>
+          <!--green/yellow-->
+          <band min="500" max="590">
+            <ppfd min="100" max="100" />
+          </band>
+          <!--red-->
+          <band min="590" max="750">
+            <ppfd min="750" max="650" />
+          </band>
+          <!--ir-->
+          <band min="750" max="1400">
+            <ppfd min="0" max="0" />
+          </band>
+        </light>
+        <water>
+          <electro-conductivity min="2.1" max="2.1" />
+        </water>
+      </period>
+      <!-- night time -->
+      <period start="32400" end="86399">
+        <air>
+          <temperature min="10" max="15.5" />
+        </air>
+        <water>
+          <electro-conductivity min="2.1" max="2.1" />
+        </water>
+      </period>
+    </cycle>
+  </fruiting>
 </recipe>
