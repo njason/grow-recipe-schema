@@ -12,7 +12,7 @@ XML data format to represent grow recipes for plants. Designed for controlled-en
 
 see http://unitsofmeasure.org/ucum.html
 
-## Languange specific wrappers
+## SDKs
  - [Python](https://github.com/njason/grow-recipe-python)
 
 ## Schema validation
