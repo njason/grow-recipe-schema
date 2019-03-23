@@ -6,12 +6,6 @@ XML data format to represent grow recipes for plants. Designed for controlled-en
 - [presentation](https://www.youtube.com/watch?v=Zhoeu7jPA-w)
 - [slides](https://njason.github.io/grow-recipe-schema/presentation)
 
-[Google XML styling guide](https://google.github.io/styleguide/xmlstyle.html)
-
-**Units Key:**
-
-see http://unitsofmeasure.org/ucum.html
-
 ## SDKs
  - [Python](https://github.com/njason/grow-recipe-python)
 
