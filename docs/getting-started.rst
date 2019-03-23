@@ -1,5 +1,5 @@
-Quick-start
-===========
+Getting Started
+===============
 
 Although the structure of the recipes is strictly defined, all data is optional. An extreme example used to prove this point would be a completely empty recipe.
 

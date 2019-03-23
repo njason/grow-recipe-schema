@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Plant Recipe Schema documentation build configuration file, created by
+# Grow Recipe Schema documentation build configuration file, created by
 # sphinx-quickstart on Wed Jun  7 02:22:28 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -46,9 +46,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Plant Recipe Schema'
-copyright = '2017, AVF'
-author = 'AVF'
+project = 'Grow Recipe Schema'
+copyright = 'Jason Biegel'
+author = 'Jason Biegel'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -100,7 +100,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'PlantRecipeSchemadoc'
+htmlhelp_basename = 'GrowRecipeSchemadoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -127,8 +127,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'PlantRecipeSchema.tex', 'Plant Recipe Schema Documentation',
-     'AVF', 'manual'),
+    (master_doc, 'GrowRecipeSchema.tex', 'Grow Recipe Schema Documentation',
+     'manual'),
 ]
 
 
@@ -137,7 +137,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'plantrecipeschema', 'Plant Recipe Schema Documentation',
+    (master_doc, 'growrecipeschema', 'Grow Recipe Schema Documentation',
      [author], 1)
 ]
 
@@ -148,8 +148,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'PlantRecipeSchema', 'Plant Recipe Schema Documentation',
-     author, 'PlantRecipeSchema', 'One line description of project.',
+    (master_doc, 'GrowRecipeSchema', 'Grow Recipe Schema Documentation',
+     author, 'GrowRecipeSchema', 'One line description of project.',
      'Miscellaneous'),
 ]
 

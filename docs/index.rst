@@ -1,16 +1,14 @@
-.. Plant Recipe Schema documentation master file, created by
-   sphinx-quickstart on Wed Jun  7 02:22:28 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Grow Recipe Schema
+===================
 
-Welcome to Plant Recipe Schema's documentation!
-===============================================
+A grow recipe defines instructions for how to grow plants in a controlled environment. Typically, recipes are printed in plain text which make it easier for farmers to read. However, plain text recipes are not easy for computers to intepret. As more effort is being put into automation of plant production, there needs to be a interoperable method of storing recipes. Defining a schema for grow recipes will ensure they can be safely interpreted by multiple types of grow systems.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   getting-started
+   metrics
 
 Indices and tables
 ==================

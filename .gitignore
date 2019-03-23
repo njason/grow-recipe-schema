@@ -4,25 +4,8 @@
 *.swo
 *.stackdump
 
-# databases shouldn't be stored
-*.db
-
-# logs
-nohup.out
-npm-debug.log
-
-# python
-*.pyc
-/dist
-/build
-.cache
-.mypy_cache
-
-#sphinx
-_build
-
-# c
-*.out
+# docs
+/docs/build
 
 # app
 /*.xml

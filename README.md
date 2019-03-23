@@ -29,3 +29,23 @@ The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be use
 
 #### macOS
 pre-installed
+
+### using xmllint
+
+To validate a grow recipe against the schema, run the following xmllint command in the repository root directory:
+
+`xmllint --schema grow-recipe.xsd <path to the recipe XML file>`
+
+## Development
+
+### Documentation
+
+Documentation is stored in the `docs` directory in ReST syntax and built using [Sphinx](http://www.sphinx-doc.org). To build the documentation, you first need to install Sphinx. To install Sphinx using [pip](https://pip.pypa.io/en/stable/), run:
+
+`pip install -U Sphinx`
+
+To build the documentation, run the following command in the repository root:
+
+`sphinx-build -b html docs docs/build`
+
+To view the built documentation, open a browser to `docs/build/index.html`
