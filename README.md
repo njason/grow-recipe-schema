@@ -6,6 +6,8 @@ XML data format to represent grow recipes for plants. Designed for controlled-en
 - [presentation](https://www.youtube.com/watch?v=Zhoeu7jPA-w)
 - [slides](https://njason.github.io/grow-recipe-schema/presentation)
 
+[Documentation](https://grow-recipe-schema.readthedocs.io)
+
 ## SDKs
  - [Python](https://github.com/njason/grow-recipe-python)
 
@@ -24,7 +26,7 @@ The XML Schema Definition file in this repository, `grow-recipe.xsd`, can be use
 #### macOS
 pre-installed
 
-### using xmllint
+### Using xmllint
 
 To validate a grow recipe against the schema, run the following xmllint command in the repository root directory:
 
@@ -34,7 +36,7 @@ To validate a grow recipe against the schema, run the following xmllint command 
 
 ### Documentation
 
-Documentation is stored in the `docs` directory in ReST syntax and built using [Sphinx](http://www.sphinx-doc.org). To build the documentation, you first need to install Sphinx. To install Sphinx using [pip](https://pip.pypa.io/en/stable/), run:
+Documentation is stored in the `docs` directory in [reStructuredText](http://docutils.sourceforge.net/rst.html) format and built using [Sphinx](http://www.sphinx-doc.org). To build the documentation, you first need to install Sphinx. To install Sphinx using [pip](https://pip.pypa.io/en/stable/), run:
 
 `pip install -U Sphinx`
 

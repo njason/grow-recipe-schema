@@ -8,6 +8,7 @@ A grow recipe defines instructions for how to grow plants in a controlled enviro
    :caption: Contents:
 
    getting-started
+   structure
    metrics
 
 Indices and tables

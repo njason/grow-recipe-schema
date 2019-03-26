@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=PlantRecipeSchema
+set SPHINXPROJ=GrowRecipeSchema
 
 if "%1" == "" goto help
 
