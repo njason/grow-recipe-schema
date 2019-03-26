@@ -34,11 +34,15 @@ To validate a grow recipe against the schema, run the following xmllint command 
 
 ## Development
 
+If you make any changes to the schema, you need to verify that all examples and documentations complies to the current state of the schema. To test that all example recipe files in this repository validate against the schema, run this command:
+
+`$ find . -name "*.xml" | xargs xmllint --schema grow-recipe.xsd --noout`
+
 ### Documentation
 
 Documentation is stored in the `docs` directory in [reStructuredText](http://docutils.sourceforge.net/rst.html) format and built using [Sphinx](http://www.sphinx-doc.org). To build the documentation, you first need to install Sphinx. To install Sphinx using [pip](https://pip.pypa.io/en/stable/), run:
 
-`pip install -U Sphinx`
+`pip install -U Sphinx sphinx_rtd_theme`
 
 To build the documentation, run the following command in the repository root:
 

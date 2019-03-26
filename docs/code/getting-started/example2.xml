@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<recipe>
+
+  <default>
+    <air>
+      <temperature min="18.3" />
+    </air>
+  </default>
+
+  <flowering>
+    <air>
+      <temperature min="23.9" max="29.4" />
+    </air>
+  </flowering>
+
+</recipe>

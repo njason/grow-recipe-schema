@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<recipe>
+
+  <default>
+    <air>
+      <temperature min="18" max="24" />
+    </air>
+  </default>
+
+</recipe>
