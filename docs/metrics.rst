@@ -9,9 +9,9 @@ Air
 =================== ===============================
 Name                Unit
 =================== ===============================
-`temperature`       ℃
-`relative-humidity` %
-`co2`               mg/m\ :sup:`3` (a ppm converter_.)
+temperature         ℃
+relative-humidity   %
+co                  mg/m\ :sup:`3` (a ppm converter_.)
 =================== ===============================
 
 Water
@@ -20,34 +20,36 @@ Water
 =============================== =============
 Name                            Unit
 =============================== =============
-`temperature`                   ℃
-`electro-conductivity`          mS/cm
-`dissolved-oxygen`              mg/L (a ppm converter_.)
-`oxidizing-reduction-potential` mV
-`hardness`                      mg/L
-`ph`                            pH
-`vpd`                           kPa
-`bicarbonate`                   mg/L
-`nitrogen`                      mg/L 
-`potassium`                     mg/L
-`calcium`                       mg/L
-`magnesium`                     mg/L
-`sulfer`                        mg/L
-`iron`                          mg/L
-`copper`                        mg/L
-`zinc`                          mg/L
-`manganese`                     mg/L
-`sodium`                        mg/L
-`boron`                         mg/L
-`chlorine`                      mg/L
-`silicon`                       mg/L
-`iron-chelates`                 mg/L
-`sodium-chloride`               mg/L
+temperature                     ℃
+electro-conductivity            mS/cm
+dissolved-oxygen                mg/L (a ppm converter_.)
+oxidizing-reduction-potential   mV
+hardness                        mg/L
+ph                              pH
+vpd                             kPa
+bicarbonate                     mg/L
+nitrogen                        mg/L
+potassium                       mg/L
+calcium                         mg/L
+magnesium                       mg/L
+sulfer                          mg/L
+iron                            mg/L
+copper                          mg/L
+zinc                            mg/L
+manganese                       mg/L
+sodium                          mg/L
+boron                           mg/L
+chlorine                        mg/L
+silicon                         mg/L
+iron-chelates                   mg/L
+sodium-chloride                 mg/L
 =============================== =============
 
 Light
 -----
 Light metrics are separated into one or more bands. A band is defined as an upper and lower wavelength (nanometers) within the electromagnetic spectrum. Within a band a light intensity is defined with the usual min and max values. Light intensity is represented in PPFD (µmol/m\ :sup:`2`\ /s)
 
+.. literalinclude:: code/metrics/light.xml
+   :language: xml
 
 .. _converter: http://www.lenntech.com/calculators/ppm/converter-parts-per-million.htm

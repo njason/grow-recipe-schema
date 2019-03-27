@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<recipe>
+
+  <default>
+    <light>
+      <!--red-->
+      <band min="590" max="750">
+        <ppfd min="650" max="650" />
+      </band>
+    </light> 
+  </default>
+    
+</recipe>
